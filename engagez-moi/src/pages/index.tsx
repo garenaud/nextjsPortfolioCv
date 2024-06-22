@@ -5,7 +5,7 @@ import ExampleComponent from '@/components/component';
 const Home: React.FC = () => {
   return (
     <Layout>
-      <h1>Welcome to Engagez-moi Portfolio</h1>
+      <h1>Engagez-moi Portfolio</h1>
       <ExampleComponent message="Hello from ExampleComponent!" />
     </Layout>
   );
