@@ -9,7 +9,6 @@ module.exports = {
         aggregateTimeout: 300,  // Delay before rebuilding
       };
     }
-    }
     return config;
   },
 };
