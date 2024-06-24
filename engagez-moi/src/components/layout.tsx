@@ -1,4 +1,6 @@
 import React, { ReactNode } from 'react';
+import ResponsiveAppBar from '@/components/navbar';
+
 
 interface LayoutProps {
   children: ReactNode;
@@ -7,7 +9,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
-      <header>Header Content</header>
+      <header><ResponsiveAppBar /></header>
       <main>{children}</main>
       <footer>Footer Content</footer>
     </div>
