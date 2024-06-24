@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 const Home: React.FC = () => {
   return (
     <Layout>
-      <h1>Engagez-moi Portfolio</h1>
+      <h1>Engagez-moi vite s'il-vous-plait</h1>
       <ExampleComponent message="Hello from ExampleComponent!" />
       <Button variant="contained" color="primary">
         Cliquez moi
