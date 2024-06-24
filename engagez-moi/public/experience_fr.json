@@ -1,0 +1,143 @@
+{
+    "experiences": [
+      {
+        "company": "BLUESUNRISE",
+        "location": "Petaluma (Californie)",
+        "role": "UI Designer",
+        "type": "Télétravail",
+        "year": "2022",
+        "city": "Petaluma",
+        "tasks": [
+          "Création de l'interface utilisateur pour la nouvelle application de monitoring de Diamanti (Diamanti Ultimate) sur Figma",
+          "Communication avec les développeurs",
+          "Recherche afin d'améliorer le UX de l'application"
+        ],
+        "category": "UI"
+      },
+      {
+        "company": "GROUNDWORK OPEN SOURCE",
+        "location": "Bay Area (Californie)",
+        "role": "UI Designer",
+        "year": "2020",
+        "city": "Bay Area",
+        "tasks": [
+          "Création de logos et d’icônes et autres tâches graphiques",
+          "Communication avec les développeurs",
+          "Design de l’interface de la web application sur Adobe XD"
+        ],
+        "category": "UI"
+      },
+      {
+        "company": "VAC",
+        "location": "La Chaux-de-Fonds",
+        "role": "Polygraphe",
+        "years": "2012 - 2017",
+        "city": "La Chaux-de-Fonds",
+        "tasks": [
+          "Mise en page du catalogue de vente et dépliants en français et en allemand",
+          "Création de bandeaux et vignettes pour le site internet",
+          "Gestion du flux de production sur plotter",
+          "Traitement d’images numériques et détourages",
+          "Responsable du contrôle des fichiers avant l’envoi à l’imprimeur",
+          "Réalisation de support publicitaires pour l’entreprise"
+        ],
+        "category": "Design"
+      },
+      {
+        "company": "URECH",
+        "location": "Neuchatel",
+        "role": "Polygraphe",
+        "years": "2010 - 2012",
+        "city": "Neuchatel",
+        "tasks": [
+          "Mise en page du catalogue de vente et dépliants en français et en allemand",
+          "Prises de vue de certains produits",
+          "Création de contenu pour le site internet",
+          "Réalisation de support publicitaires pour l’entreprise"
+        ],
+        "category": "Design"
+      },
+      {
+        "company": "IMPRIMERIE GESSLER",
+        "location": "Colombier",
+        "role": "Polygraphe",
+        "years": "2008 - 2009",
+        "city": "Colombier",
+        "tasks": [
+          "Communications avec les clients",
+          "Mise en page d’un journal hebdomadaire",
+          "Travaux de ville, Utilisation du CTP"
+        ],
+        "category": "Design"
+      },
+      {
+        "company": "IMPRIMERIE CONTACT",
+        "location": "Nyon",
+        "role": "Polygraphe",
+        "years": "2007 - 2008",
+        "city": "Nyon",
+        "tasks": [
+          "Travaux de ville"
+        ],
+        "category": "Design"
+      },
+      {
+        "company": "REDATECH",
+        "location": "La Chaux-de-Fonds",
+        "role": "Polygraphe",
+        "years": "2006 - 2007",
+        "city": "La Chaux-de-Fonds",
+        "tasks": [
+          "Mise en page de manuels technique"
+        ],
+        "category": "Design"
+      }
+    ],
+    "education": [
+      {
+        "institution": "École de Développement 42",
+        "location": "Lausanne",
+        "program": "42 Lausanne",
+        "date": "Novembre 2021",
+        "city": "Lausanne",
+        "category": "Dev"
+      },
+      {
+        "institution": "College of Marin",
+        "location": "USA",
+        "program": "Multimedia Studies (Web Design)",
+        "years": "2018 - 2020",
+        "city": "USA",
+        "category": "Design"
+      },
+      {
+        "institution": "Imprimerie Gasser",
+        "location": "Le Locle",
+        "program": "Apprentissage de Polygraphe",
+        "years": "2002 - 2006",
+        "city": "Le Locle",
+        "category": "Design"
+      }
+    ],
+    "languages": [
+      {
+        "course": "Anglais",
+        "institution": "College of Marin",
+        "date": "01/2018 - 05/2018",
+        "city": "USA"
+      },
+      {
+        "course": "Anglais",
+        "institution": "EF Chicago",
+        "date": "09/2017 - 12/2017",
+        "city": "Chicago"
+      },
+      {
+        "course": "Anglais",
+        "institution": "Eurocentres London",
+        "date": "04/2017 - 07/2017",
+        "city": "London"
+      }
+    ]
+  }
+  

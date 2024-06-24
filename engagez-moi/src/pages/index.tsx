@@ -4,22 +4,45 @@ import ExampleComponent from '@/components/component';
 import Button from '@mui/material/Button';
 import { firaCode } from '@/components/fonts';
 import Image from 'next/image';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 
 const Home: React.FC = () => {
   return (
     <Layout>
-      <h1 style={{fontFamily: firaCode.style.fontFamily}}>Engagez-moi</h1>
-      <Image
-        src="/images/developer-pic-1.png" // Chemin vers votre image
-        alt="Description de l'image" // Texte alternatif pour l'image
-        width={500} // Largeur de l'image
-        height={300} // Hauteur de l'image
-        layout='responsive'
-      />
-      <ExampleComponent message="Hello from ExampleComponent!" />
-      <Button variant="contained" color="primary">
-        Cliquez moi
-      </Button>
+      <Container maxWidth="xl">
+        <Grid container spacing={2} alignItems="center" justifyContent="center" style={{ minHeight: '100vh' }}>
+          <Grid item xs={12} md={6}>
+            <Image
+              src="/images/developer-pic-1.png" 
+              alt="Description de l'image" 
+              width={500}
+              height={300}
+              layout="responsive"
+            />
+          </Grid>
+          <Grid item xs={12} md={6} justifyContent="center" >
+            <Image
+              src="/images/LogoGbleu.svg" 
+              alt="Description de l'image" 
+              width={200}
+              height={200}
+              //layout="responsive"
+            />
+            <Typography variant="h1" gutterBottom>Engagez-moi</Typography>
+            <Typography variant="subtitle1" gutterBottom>Je m'appelle Gaëtan Renaud et je suis passionné par le design et le développement web. 
+              Ce CV interactif est conçu pour vous offrir un aperçu de mon parcours professionnel, 
+              de mes compétences et de mes expériences dans le domaine du design graphique 
+              et du développement informatique. Découvrez mes projets, mes compétences et les diverses 
+              étapes de ma carrière. Explorez mon univers et n'hésitez pas à me contacter pour toute collaboration 
+              ou opportunité.</Typography>
+            <Button variant="contained" color="primary">
+              Cliquez moi
+            </Button>
+          </Grid>
+        </Grid>
+      </Container>
     </Layout>
   );
 };
