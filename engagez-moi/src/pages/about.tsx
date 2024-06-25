@@ -8,4 +8,5 @@ return (
     <CustomizedTimeline />
    <div>About Page</div>;
   </Layout>
-  )};
+  );
+};

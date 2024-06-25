@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from "next/router";
 import { styled } from "@mui/material/styles";
 
-import { Container, Grid, Typography, useTheme } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 
 import { routes } from "@/data/routes";
 import Social from "@/components/social";
@@ -38,7 +38,6 @@ interface Route {
 }
 
 const Footer: React.FC = () => {
-  const theme = useTheme();
   const path: Route[] = routes;
   const router = useRouter();
   return (

@@ -1,13 +1,11 @@
 import React from 'react';
 import Layout from '@/components/layout';
-import ExampleComponent from '@/components/component';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
 import Image from 'next/image';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { Palette } from '@material-ui/icons';
 //import { Open_Sans, Average_Sans } from 'next/font/google';
 
 const Home: React.FC = () => {
@@ -34,11 +32,11 @@ const Home: React.FC = () => {
             />
             <Typography variant='h1' color="primary" gutterBottom>Engagez-moi</Typography>
             <Typography variant='body1' gutterBottom>
-              Je m'appelle Gaëtan Renaud et je suis passionné par le design et le développement web. 
-              Ce CV interactif est conçu pour vous offrir un aperçu de mon parcours professionnel, 
-              de mes compétences et de mes expériences dans le domaine du design graphique 
-              et du développement informatique. Découvrez mes projets, mes compétences et les diverses 
-              étapes de ma carrière. Explorez mon univers et n'hésitez pas à me contacter pour toute collaboration 
+              Je m&apos;appelle Gaëtan Renaud et je suis passionné par le design et le développement web.
+              Ce CV interactif est conçu pour vous offrir un aperçu de mon parcours professionnel,
+              de mes compétences et de mes expériences dans le domaine du design graphique
+              et du développement informatique. Découvrez mes projets, mes compétences et les diverses
+              étapes de ma carrière. Explorez mon univers et n&apos;hésitez pas à me contacter pour toute collaboration
               ou opportunité.
             </Typography>
             <Link href="/about">

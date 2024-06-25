@@ -14,7 +14,7 @@ import { socialMedia } from "@/data/socialMedia";
 const StyledHomeIcon = styled(HomeIcon)(({ theme }) => ({
   width: "30px",
   height: "30px",
-  [theme.breakpoints.down("xs")]: {
+  [theme.breakpoints.down('sm')]: {
     width: "25px",
     height: "25px",
   },
@@ -26,7 +26,7 @@ const StyledHomeIcon = styled(HomeIcon)(({ theme }) => ({
 const StyledFacebookIcon = styled(FacebookIcon)(({ theme }) => ({
   width: "30px",
   height: "30px",
-  [theme.breakpoints.down("xs")]: {
+  [theme.breakpoints.down('sm')]: {
     width: "25px",
     height: "25px",
   },
@@ -38,7 +38,7 @@ const StyledFacebookIcon = styled(FacebookIcon)(({ theme }) => ({
 const StyledInstagramIcon = styled(InstagramIcon)(({ theme }) => ({
   width: "30px",
   height: "30px",
-  [theme.breakpoints.down("xs")]: {
+  [theme.breakpoints.down('sm')]: {
     width: "25px",
     height: "25px",
   },
@@ -50,7 +50,7 @@ const StyledInstagramIcon = styled(InstagramIcon)(({ theme }) => ({
 const StyledGitHubIcon = styled(GitHubIcon)(({ theme }) => ({
   width: "30px",
   height: "30px",
-  [theme.breakpoints.down("xs")]: {
+  [theme.breakpoints.down('sm')]: {
     width: "25px",
     height: "25px",
   },

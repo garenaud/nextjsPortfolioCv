@@ -10,6 +10,27 @@ let theme = createTheme({
       main: pink[500],
     },
   },
+  typography: {
+    fontFamily: "'Average Sans', sans-serif",
+    h1: {
+      fontFamily: "'Open Sans', sans-serif",
+    },
+    h2: {
+      fontFamily: "'Open Sans', sans-serif",
+    },
+    h3: {
+      fontFamily: "'Open Sans', sans-serif",
+    },
+    h4: {
+      fontFamily: "'Open Sans', sans-serif",
+    },
+    h5: {
+      fontFamily: "'Open Sans', sans-serif",
+    },
+    h6: {
+      fontFamily: "'Open Sans', sans-serif",
+    },
+  },
   components: {
     MuiButton: {
       styleOverrides: {
