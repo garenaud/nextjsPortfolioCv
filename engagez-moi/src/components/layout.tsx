@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import ResponsiveAppBar from '@/components/navbar';
+import Footer from '@/components/footer';
 
 
 interface LayoutProps {
@@ -11,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div>
       <header><ResponsiveAppBar /></header>
       <main>{children}</main>
-      <footer>Footer Content</footer>
+      <Footer />
     </div>
   );
 };

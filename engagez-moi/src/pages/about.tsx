@@ -1,3 +1,10 @@
+import Layout from '@/components/layout';
+//import CustomizedTimeline from '@/components/timeline';
+
 export default function About() {
-    return <div>About Page</div>;
-  }
+return (
+  <Layout>
+    {/* <CustomizedTimeline /> */}
+   <div>About Page</div>;
+  </Layout>
+  )};

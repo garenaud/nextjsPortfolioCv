@@ -1,9 +1,20 @@
+/* styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Open+Sans:wght@400;700&family=Average+Sans:wght@400&display=swap'); */
+
+body {
+  font-family: 'Average Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Fira Code', sans-serif;
+  @apply font-sans;
 }
 
 :root {
