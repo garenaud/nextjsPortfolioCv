@@ -1,10 +1,23 @@
 import * as React from 'react';
 import { AppProps } from 'next/app';
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider, Theme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import '@/styles/globals.css';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { green, pink } from '@mui/material/colors';
+
+// Fonction pour définir les styles des composants
+const componentStyleOverrides = (theme: Theme) => ({
+  MuiButton: {
+    styleOverrides: {
+      root: {
+        fontWeight: 'bold',
+        backgroundColor: theme.palette.primary.main, // Exemple d'utilisation de theme
+      },
+    },
+  },
+  // Ajoutez ici d'autres composants si nécessaire
+});
 
 let theme = createTheme({
   palette: {
@@ -36,20 +49,10 @@ let theme = createTheme({
       fontFamily: "'Open Sans', sans-serif",
     },
   },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          fontWeight: 'bold',
-        },
-      },
-    },
-  },
 });
 
 theme = responsiveFontSizes(theme);
-
-console.log("theme ", theme);
+theme.components = componentStyleOverrides(theme);
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   console.log("Theme:", theme); // Vérifiez que le thème est correctement défini
