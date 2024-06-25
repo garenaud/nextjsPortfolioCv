@@ -1,42 +1,26 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { green, pink } from '@mui/material/colors';
 
-const theme = createTheme({
-    typography: {
-        fontFamily: 'Average Sans, sans-serif',
+let theme = createTheme({
+  palette: {
+    primary: {
+      main: green[500],
     },
-    components: {
-        MuiTypography: {
-            styleOverrides: {
-                root: {
-                    fontFamily: 'Average Sans, sans-serif',
-                },
-                h1: {
-                    fontFamily: 'Open Sans, sans-serif',
-                },
-                h2: {
-                    fontFamily: 'Open Sans, sans-serif',
-                },
-                h3: {
-                    fontFamily: 'Open Sans, sans-serif',
-                },
-                h4: {
-                    fontFamily: 'Open Sans, sans-serif',
-                },
-                h5: {
-                    fontFamily: 'Open Sans, sans-serif',
-                },
-                h6: {
-                    fontFamily: 'Open Sans, sans-serif',
-                },
-                body1: {
-                    fontFamily: 'Average Sans, sans-serif',
-                },
-                body2: {
-                    fontFamily: 'Average Sans, sans-serif',
-                },
-            },
+    secondary: {
+      main: pink[500],
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontWeight: 'bold',
         },
+      },
     },
+  },
 });
+
+theme = responsiveFontSizes(theme);
 
 export default theme;

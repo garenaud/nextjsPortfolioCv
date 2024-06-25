@@ -70,14 +70,14 @@ const Footer: React.FC = () => {
           component={"a"}
           target="_blank"
           rel="noreferrer noopener"
-          href="https://satoruakiyama.com"
+          href="https://engagez-moi.com"
           justifyContent="center"
           style={{
             textDecoration: "none",
           }}
         >
           <CopylightTypography>
-            &copy;Satoru Akiyama
+            &copy;Gaëtan Renaud {new Date().getFullYear()}
           </CopylightTypography>
         </Grid>
       </Container>

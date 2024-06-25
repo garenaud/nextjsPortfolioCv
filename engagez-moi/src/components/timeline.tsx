@@ -46,6 +46,10 @@ const experienceData: ExperienceData = experienceDataJson as ExperienceData;
 
 function parseYear(yearString: string): ParsedYear {
   // Si l'année est un intervalle (ex: "2010 - 2012")
+  console.log(yearString);
+  if (!yearString) {
+    throw new Error('Invalid input: yearString is undefined');
+  }
   if (yearString.includes('-')) {
     const [startYearStr, endYearStr] = yearString.split('-').map(str => str.trim());
     const [startYear, endYear] = [Number(startYearStr), Number(endYearStr)];
@@ -80,6 +84,7 @@ function parseYear(yearString: string): ParsedYear {
 export default function CustomizedTimeline() {
   const sortedExperienceData = experienceData.experiences.sort((a: Experience, b: Experience) => {
     if (a && b) {
+      console.log(a.years, b.years);
       const parsedYearA = parseYear(a.years);
       const parsedYearB = parseYear(b.years);
 

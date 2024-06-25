@@ -10,7 +10,44 @@ import HomeIcon from "@mui/icons-material/Home";
 
 import { socialMedia } from "@/data/socialMedia";
 
-const SnsIcon = styled('div')(({ theme }) => ({
+// Créez des icônes stylisées en utilisant `styled`
+const StyledHomeIcon = styled(HomeIcon)(({ theme }) => ({
+  width: "30px",
+  height: "30px",
+  [theme.breakpoints.down("xs")]: {
+    width: "25px",
+    height: "25px",
+  },
+  "&:hover": {
+    color: theme.palette.info.main,
+  },
+}));
+
+const StyledFacebookIcon = styled(FacebookIcon)(({ theme }) => ({
+  width: "30px",
+  height: "30px",
+  [theme.breakpoints.down("xs")]: {
+    width: "25px",
+    height: "25px",
+  },
+  "&:hover": {
+    color: theme.palette.info.main,
+  },
+}));
+
+const StyledInstagramIcon = styled(InstagramIcon)(({ theme }) => ({
+  width: "30px",
+  height: "30px",
+  [theme.breakpoints.down("xs")]: {
+    width: "25px",
+    height: "25px",
+  },
+  "&:hover": {
+    color: theme.palette.info.main,
+  },
+}));
+
+const StyledGitHubIcon = styled(GitHubIcon)(({ theme }) => ({
   width: "30px",
   height: "30px",
   [theme.breakpoints.down("xs")]: {
@@ -54,10 +91,7 @@ const Social: React.FC<SocialProps> = ({ color }) => {
         rel="noreferrer noopener"
         href={homepage}
       >
-        <HomeIcon
-          component={SnsIcon}
-          color={color ? "primary" : "secondary"}
-        />
+        <StyledHomeIcon color={color ? "primary" : "secondary"} />
       </Grid>
       <Grid
         item
@@ -66,10 +100,7 @@ const Social: React.FC<SocialProps> = ({ color }) => {
         rel="noreferrer noopener"
         href={facebook}
       >
-        <FacebookIcon
-          component={SnsIcon}
-          color={color ? "primary" : "secondary"}
-        />
+        <StyledFacebookIcon color={color ? "primary" : "secondary"} />
       </Grid>
       <Grid
         item
@@ -78,10 +109,7 @@ const Social: React.FC<SocialProps> = ({ color }) => {
         rel="noreferrer noopener"
         href={instagram}
       >
-        <InstagramIcon
-          component={SnsIcon}
-          color={color ? "primary" : "secondary"}
-        />
+        <StyledInstagramIcon color={color ? "primary" : "secondary"} />
       </Grid>
       <Grid
         item
@@ -90,10 +118,7 @@ const Social: React.FC<SocialProps> = ({ color }) => {
         rel="noreferrer noopener"
         href={github}
       >
-        <GitHubIcon
-          component={SnsIcon}
-          color={color ? "primary" : "secondary"}
-        />
+        <StyledGitHubIcon color={color ? "primary" : "secondary"} />
       </Grid>
       {/* add social media */}
     </Grid>
