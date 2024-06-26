@@ -30,7 +30,7 @@ const Home: React.FC = () => {
               height={200}
               //layout="responsive"
             />
-            <Typography variant='h1' color="primary" gutterBottom>Engagez-moi</Typography>
+            <Typography variant='h1' color="primary" gutterBottom>Blablabla</Typography>
             <Typography variant='body1' gutterBottom>
               Je m&apos;appelle Gaëtan Renaud et je suis passionné par le design et le développement web.
               Ce CV interactif est conçu pour vous offrir un aperçu de mon parcours professionnel,

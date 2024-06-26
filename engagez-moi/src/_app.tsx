@@ -32,6 +32,7 @@ let theme = createTheme({
     fontFamily: "'Average Sans', sans-serif",
     h1: {
       fontFamily: "'Open Sans', sans-serif",
+      
     },
     h2: {
       fontFamily: "'Open Sans', sans-serif",
