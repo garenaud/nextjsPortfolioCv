@@ -6,9 +6,13 @@ import Image from 'next/image';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material/styles';
+import theme from '@/styles/theme';
 //import { Open_Sans, Average_Sans } from 'next/font/google';
 
 const Home: React.FC = () => {
+  console.log("fucking saloperie de theme = ", theme);
+  //const theme = useTheme();
   return (
     <Layout>
       <Container maxWidth="xl">
@@ -30,14 +34,14 @@ const Home: React.FC = () => {
               height={200}
               //layout="responsive"
             />
-            <Typography variant='h1' color="primary" gutterBottom>Blablabla</Typography>
+            <Typography variant='h1' color={theme.palette.primary.main} gutterBottom>Blablabla</Typography>
             <Typography variant='body1' gutterBottom>
               Je m&apos;appelle Gaëtan Renaud et je suis passionné par le design et le développement web.
               Ce CV interactif est conçu pour vous offrir un aperçu de mon parcours professionnel,
               de mes compétences et de mes expériences dans le domaine du design graphique
               et du développement informatique. Découvrez mes projets, mes compétences et les diverses
               étapes de ma carrière. Explorez mon univers et n&apos;hésitez pas à me contacter pour toute collaboration
-              ou opportunité.
+              ou opportunité. <span style={{ color: theme.palette.primary.main }}>Texte avec la couleur primaire du thème</span>
             </Typography>
             <Link href="/about">
               <Button variant="contained" color="primary">

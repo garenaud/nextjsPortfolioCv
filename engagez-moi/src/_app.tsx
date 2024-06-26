@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { ThemeProvider, Theme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import '@/styles/globals.css';
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes, useTheme } from '@mui/material/styles';
 import { green, pink } from '@mui/material/colors';
 
 // Fonction pour définir les styles des composants
@@ -54,9 +54,10 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 theme.components = componentStyleOverrides(theme);
+console.log("theme a la fin ", theme);
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  console.log("Theme:", theme); // Vérifiez que le thème est correctement défini
+  const theme = useTheme();
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
