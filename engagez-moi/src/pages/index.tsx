@@ -11,8 +11,6 @@ import theme from '@/styles/theme';
 //import { Open_Sans, Average_Sans } from 'next/font/google';
 
 const Home: React.FC = () => {
-  console.log("fucking saloperie de theme = ", theme);
-  //const theme = useTheme();
   return (
     <Layout>
       <Container maxWidth="xl">
