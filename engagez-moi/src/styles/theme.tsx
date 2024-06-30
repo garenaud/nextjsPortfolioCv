@@ -1,17 +1,17 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
-import { green, pink } from '@mui/material/colors';
+import { amber, deepOrange, grey } from '@mui/material/colors';
 import { Open_Sans, Average_Sans } from 'next/font/google';
 
 export const opensans = Open_Sans({
   subsets: ['latin'],
   display: 'swap',
-})
+});
 
 export const averagesans = Average_Sans({
   subsets: ['latin'],
   display: 'swap',
   weight: '400',
-})
+});
 
 declare module "@mui/material/styles" {  
   interface TypographyVariants {
@@ -33,54 +33,64 @@ declare module "@mui/material/Typography" {
 
 let theme = createTheme({
   palette: {
-    primary: green,
-    secondary: pink,
+    primary: {
+      main: amber[500], // Couleur primaire principale
+      light: amber[300],
+      dark: amber[700],
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: deepOrange[500], // Couleur secondaire principale
+      light: deepOrange[300],
+      dark: deepOrange[700],
+      contrastText: '#fff',
+    },
+    background: {
+      default: grey[100], // Couleur de fond
+      paper: '#fff', // Couleur de fond des composants de type papier
+    },
+    text: {
+      primary: grey[900], // Couleur principale du texte
+      secondary: grey[700], // Couleur secondaire du texte
+    },
   },
   typography: {
     fontFamily: averagesans.style.fontFamily,
     h1: {
       fontFamily: opensans.style.fontFamily,
       fontWeight: 400,
+      color: amber[700], // Couleur du texte des titres h1
     },
     h2: {
       fontFamily: opensans.style.fontFamily,
+      color: amber[700], // Couleur du texte des titres h2
     },
     h3: {
       fontFamily: opensans.style.fontFamily,
+      color: amber[700], // Couleur du texte des titres h3
     },
     h4: {
       fontFamily: opensans.style.fontFamily,
+      color: amber[700], // Couleur du texte des titres h4
     },
     h5: {
       fontFamily: opensans.style.fontFamily,
+      color: amber[700], // Couleur du texte des titres h5
     },
     h6: {
       fontFamily: opensans.style.fontFamily,
+      color: amber[700], // Couleur du texte des titres h6
     },
     body1: {
-      fontFamily:  averagesans.style.fontFamily,
+      fontFamily: averagesans.style.fontFamily,
+      color: grey[900], // Couleur du texte du corps
     },
     body2: {
-      fontFamily:  averagesans.style.fontFamily,
-    },
-  },
-  components: {
-    MuiCssBaseline: {
-/*       styleOverrides: `
-        @font-face {
-          font-family: 'Raleway';
-          font-style: normal;
-          font-display: swap;
-          font-weight: 400;
-          src: local('Raleway'), local('Raleway-Regular'), url(${RalewayWoff2}) format('woff2');
-          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-        }
-      `, */
+      fontFamily: averagesans.style.fontFamily,
+      color: grey[700], // Couleur secondaire du texte du corps
     },
   },
 });
 
-
 theme = responsiveFontSizes(theme);
-//console.log("theme ", theme);
 export default theme;
