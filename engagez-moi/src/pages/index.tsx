@@ -12,24 +12,10 @@ const Home: React.FC = () => {
   return (
     <Layout>
       <Container maxWidth="xl">
-        <Grid container spacing={2} alignItems="center" justifyContent="center" style={{ minHeight: '100vh' }}>
-          <Grid item xs={12} md={6}>
-            <Image
-              src="/images/developer-pic-1.png" 
-              alt="Description de l'image" 
-              width={500}
-              height={300}
-              layout="intrinsic"
-            />
-          </Grid>
+        <Grid container spacing={20} alignItems="center" justifyContent="center" style={{ minHeight: '100vh' }}>
           <Grid item xs={12} md={6} container direction="column" alignItems="center" justifyContent="center">
-            <Image
-              src="/images/LogoGbleu.svg" 
-              alt="Description de l'image" 
-              width={200}
-              height={200}
-            />
-            <Typography variant='h1' color="primary" gutterBottom>allez</Typography>
+            <Typography variant='h1' color="primary" gutterBottom mb={-2} align='center'>Gaëtan Renaud</Typography>
+            <Typography variant='h2' color="primary" gutterBottom>Junior developer</Typography>
             <Typography variant='body1' align='center' gutterBottom mb={5}>
               Je m&apos;appelle Gaëtan Renaud et je suis passionné par le design et le développement web.
               Ce CV interactif est conçu pour vous offrir un aperçu de mon parcours professionnel,
@@ -43,6 +29,15 @@ const Home: React.FC = () => {
                 Cliquez moi
               </Button>
             </Link>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Image
+              src="/images/meMain.webp" 
+              alt="Description de l'image" 
+              width={500}
+              height={300}
+              layout="intrinsic"
+            />
           </Grid>
         </Grid>
       </Container>
