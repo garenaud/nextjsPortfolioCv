@@ -17,7 +17,6 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import experienceDataJson from '../../public/experience_fr.json';
 
@@ -36,8 +35,15 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
+const HoverableTimelineItem = styled(TimelineItem)(({ theme }) => ({
+  '&:hover': {
+    backgroundColor: theme.palette.action.hover,
+    boxShadow: theme.shadows[2],
+  },
+}));
+
 export default function ExperienceTimeline() {
-  const [expanded, setExpanded] = useState<Array<boolean>>([false, false, false, false]);
+  const [expanded, setExpanded] = useState<Array<boolean>>([false, false, false, false, false, false, false, false]);
 
   const handleExpandClick = (index: number) => {
     setExpanded(prevExpanded => {
@@ -47,62 +53,63 @@ export default function ExperienceTimeline() {
     });
   };
 
+
   return (
     <Timeline position="alternate">
-      <TimelineItem sx={{ bgcolor: 'primary'}}>
-        <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
-          align="right"
-          variant="h6"
-          color="text.secondary"
-        >
-          2002 - 2006
-          <Typography variant="overline" display="block" sx={{mt: -1}}>
-            Apprentissage de Polygraphe
-          </Typography>
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot color="primary">
-            <SchoolIcon />
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant="h6" component="span">
-            Imprimerie Gasser
-          </Typography>
-          <Typography variant="overline" display="block" sx={{mt: -1}}>
-            2400 Le Locle
-          </Typography>
-          <ExpandMore
-            expand={expanded[0]}
-            onClick={() => handleExpandClick(0)}
-            aria-expanded={expanded[0]}
-            aria-label="show more"
-            sx={{ mt: -1 }}
+      <HoverableTimelineItem>
+          <TimelineOppositeContent
+            sx={{ mt: 1 }}
+            align="right"
+            variant="h6"
+            color="text.secondary"
           >
-            <ExpandMoreIcon />
-          </ExpandMore>
-          <Collapse in={expanded[0]} timeout="auto" unmountOnExit>
-            <List sx={{ mt: -3 }}>
-              <ListItem disableGutters>
-                <ListItemText primary="Communications avec les clients" />
-              </ListItem>
-              <ListItem disableGutters>
-                <ListItemText primary="Mise en page d’un journal hebdomadaire" />
-              </ListItem>
-              <ListItem disableGutters>
-                <ListItemText primary="Travaux de ville, Utilisation du CTP" />
-              </ListItem>
-            </List>
-          </Collapse>
-        </TimelineContent>
-      </TimelineItem>
+            2002 - 2006
+            <Typography variant="overline" display="block" sx={{mt: -1}}>
+              Apprentissage de Polygraphe
+            </Typography>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineConnector />
+            <TimelineDot color="primary">
+              <SchoolIcon />
+            </TimelineDot>
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={{ py: '12px', px: 2 }}>
+            <Typography variant="h6" component="span">
+              Imprimerie Gasser
+            </Typography>
+            <Typography variant="overline" display="block" sx={{mt: -1}}>
+              2400 Le Locle
+            </Typography>
+            <ExpandMore
+              expand={expanded[0]}
+              onClick={() => handleExpandClick(0)}
+              aria-expanded={expanded[0]}
+              aria-label="show more"
+              sx={{ mt: -1 }}
+            >
+              <ExpandMoreIcon />
+            </ExpandMore>
+            <Collapse in={expanded[0]} timeout="auto" unmountOnExit>
+              <List sx={{ mt: -3 }}>
+                <ListItem disableGutters>
+                  <ListItemText primary="Communications avec les clients" />
+                </ListItem>
+                <ListItem disableGutters>
+                  <ListItemText primary="Mise en page d’un journal hebdomadaire" />
+                </ListItem>
+                <ListItem disableGutters>
+                  <ListItemText primary="Travaux de ville, Utilisation du CTP" />
+                </ListItem>
+              </List>
+            </Collapse>
+          </TimelineContent>
+      </HoverableTimelineItem>
 
-      <TimelineItem>
+      <HoverableTimelineItem>
         <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
+          sx={{ mt: 1 }}
           variant="h6"
           color="text.secondary"
         >
@@ -143,11 +150,11 @@ export default function ExperienceTimeline() {
             </List>
           </Collapse>
         </TimelineContent>
-      </TimelineItem>
+      </HoverableTimelineItem>
       
-      <TimelineItem>
+      <HoverableTimelineItem>
         <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
+          sx={{ mt: 1 }}
           align="right"
           variant="h6"
           color="text.secondary"
@@ -188,11 +195,11 @@ export default function ExperienceTimeline() {
             </List>
           </Collapse>
         </TimelineContent>
-      </TimelineItem>
+      </HoverableTimelineItem>
 
-      <TimelineItem>
+      <HoverableTimelineItem>
         <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
+          sx={{ mt: 1 }}
           variant="h6"
           color="text.secondary"
         >
@@ -239,11 +246,11 @@ export default function ExperienceTimeline() {
             </List>
           </Collapse>
         </TimelineContent>
-      </TimelineItem>
+      </HoverableTimelineItem>
 
-      <TimelineItem>
+      <HoverableTimelineItem>
         <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
+          sx={{ mt: 1 }}
           align="right"
           variant="h6"
           color="text.secondary"
@@ -293,11 +300,11 @@ export default function ExperienceTimeline() {
             </List>
           </Collapse>
         </TimelineContent>
-      </TimelineItem>
+      </HoverableTimelineItem>
 
-      <TimelineItem>
+      <HoverableTimelineItem>
         <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
+          sx={{ mt: 1 }}
           variant="h6"
           color="text.secondary"
         >
@@ -353,11 +360,11 @@ export default function ExperienceTimeline() {
             </List>
           </Collapse>
         </TimelineContent>
-      </TimelineItem>
+      </HoverableTimelineItem>
 
-      <TimelineItem>
+      <HoverableTimelineItem>
         <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
+          sx={{ mt: 1 }}
           align="right"
           variant="h6"
           color="text.secondary"
@@ -407,11 +414,11 @@ export default function ExperienceTimeline() {
             </List>
           </Collapse>
         </TimelineContent>
-      </TimelineItem>
+      </HoverableTimelineItem>
 
-            <TimelineItem>
+      <HoverableTimelineItem>
         <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
+          sx={{ mt: 1 }}
           variant="h6"
           color="text.secondary"
         >
@@ -458,7 +465,7 @@ export default function ExperienceTimeline() {
             </List>
           </Collapse>
         </TimelineContent>
-      </TimelineItem>
+      </HoverableTimelineItem>
       
     </Timeline>
   );
