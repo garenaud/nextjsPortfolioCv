@@ -5,8 +5,9 @@ const Storytelling = () => {
   return (
     <Container>
       <Box sx={{ padding: 2 }}>
+        <Typography variant="subtitle1" color="primary" gutterBottom>Gaëtan Renaud</Typography>
         <Typography variant="h4" component="h2" gutterBottom>
-          Gaëtan Renaud - Un Voyage Créatif de la Polygraphie au Développement Web
+          Un Voyage Créatif de la Polygraphie au Développement Web
         </Typography>
         <Typography variant="body1" paragraph>
           Gaëtan Renaud, un autodidacte passionné et polyvalent, a toujours été attiré par le monde créatif et technologique. Né le 27 août 1987 à La Sagne, Gaëtan a débuté son parcours professionnel en tant que polygraphe, un métier où il a su allier son amour pour le design et son sens du détail.
