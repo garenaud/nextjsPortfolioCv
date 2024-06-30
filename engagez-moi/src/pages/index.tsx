@@ -6,9 +6,7 @@ import Image from 'next/image';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/material/styles';
 import theme from '@/styles/theme';
-//import { Open_Sans, Average_Sans } from 'next/font/google';
 
 const Home: React.FC = () => {
   return (
@@ -24,16 +22,15 @@ const Home: React.FC = () => {
               layout="intrinsic"
             />
           </Grid>
-          <Grid item xs={12} md={6} justifyContent="center" >
+          <Grid item xs={12} md={6} container direction="column" alignItems="center" justifyContent="center">
             <Image
               src="/images/LogoGbleu.svg" 
               alt="Description de l'image" 
               width={200}
               height={200}
-              //layout="responsive"
             />
-            <Typography variant='h1' color={theme.palette.primary.main} gutterBottom>Blablabla</Typography>
-            <Typography variant='body1' gutterBottom>
+            <Typography variant='h1' color="primary" gutterBottom>allez</Typography>
+            <Typography variant='body1' align='center' gutterBottom mb={5}>
               Je m&apos;appelle Gaëtan Renaud et je suis passionné par le design et le développement web.
               Ce CV interactif est conçu pour vous offrir un aperçu de mon parcours professionnel,
               de mes compétences et de mes expériences dans le domaine du design graphique
@@ -52,5 +49,5 @@ const Home: React.FC = () => {
     </Layout>
   );
 };
-
+console.log('theme depuis home', theme);
 export default Home;

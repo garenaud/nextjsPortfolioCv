@@ -6,11 +6,11 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import FastfoodIcon from '@mui/icons-material/Fastfood';
+import SchoolIcon from '@mui/icons-material/School';
 import Typography from '@mui/material/Typography';
 import experienceDataJson from '../../public/experience_fr.json';
 
-interface YearRange {
+/* interface YearRange {
   startYear: number;
   endYear: number;
 }
@@ -38,8 +38,8 @@ interface Experience {
 
 interface ExperienceData {
   experiences: Experience[];
-  education: { /* Ajoutez les types pour education ici */ }[];
-  languages: { /* Ajoutez les types pour languages ici */ }[];
+  education: { /* Ajoutez les types pour education ici  }[];
+  languages: { /* Ajoutez les types pour languages ici  }[];
 }
 
 const experienceData: ExperienceData = experienceDataJson as ExperienceData;
@@ -106,12 +106,12 @@ export default function CustomizedTimeline() {
             variant="body2"
             color="text.secondary"
           >
-            {experience.years} {/* Assurez-vous que la date est formatée correctement */}
+            {experience.years} {/* Assurez-vous que la date est formatée correctement }
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
             <TimelineDot>
-              <FastfoodIcon /> {/* Remplacez ceci par l'icône appropriée */}
+              <SchoolIcon /> {/* Remplacez ceci par l'icône appropriée }
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
@@ -126,6 +126,88 @@ export default function CustomizedTimeline() {
           </TimelineContent>
         </TimelineItem>
       ))}
+    </Timeline>
+  );
+} */
+
+export default function ExperienceTimeline() {
+  return (
+    <Timeline position="alternate">
+      <TimelineItem>
+        <TimelineOppositeContent
+          sx={{ m: 'auto 0' }}
+          align="right"
+          variant="body2"
+          color="text.secondary"
+        >
+          2002 - 2006
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineConnector />
+          <TimelineDot>
+            <SchoolIcon />
+          </TimelineDot>
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+          <Typography variant="h6" component="span">
+          Imprimerie Gasser
+          </Typography>
+          <Typography>Apprentissage de Polygraphe</Typography>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent
+          sx={{ m: 'auto 0' }}
+          variant="body2"
+          color="text.secondary"
+        >
+          10:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineConnector />
+          <TimelineDot color="primary">
+            <SchoolIcon />
+          </TimelineDot>
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+          <Typography variant="h6" component="span">
+            Code
+          </Typography>
+          <Typography>Because it&apos;s awesome!</Typography>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeparator>
+          <TimelineConnector />
+          <TimelineDot color="primary" variant="outlined">
+            <SchoolIcon />
+          </TimelineDot>
+          <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+        </TimelineSeparator>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+          <Typography variant="h6" component="span">
+            Sleep
+          </Typography>
+          <Typography>Because you need rest</Typography>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeparator>
+          <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+          <TimelineDot color="secondary">
+            <SchoolIcon />
+          </TimelineDot>
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+          <Typography variant="h6" component="span">
+            Repeat
+          </Typography>
+          <Typography>Because this is the life you love!</Typography>
+        </TimelineContent>
+      </TimelineItem>
     </Timeline>
   );
 }
