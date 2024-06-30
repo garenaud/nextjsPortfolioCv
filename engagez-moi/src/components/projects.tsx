@@ -51,11 +51,11 @@ const projects = [
 const technologyIcons: Record<Technology, string> = {
   "JavaScript": "/images/js.png",
   "Docker": "/images/docker.png",
-  "C++": "/images/c++.png",
+  "C++": "/images/c-logo.png",
   "C": "/images/c.png",
   "Django": "/images/django.png",
   "NGINX": "/images/nginx.png",
-  "WordPress": "/images/wordpress.png",
+  "WordPress": "/images/Wordpress.png",
   "MariaDB": "/images/mariadb.svg",
   "Unix": "/images/unix.png"
 };
@@ -72,7 +72,7 @@ const Projects = () => {
             <Card>
               <CardHeader title={project.title} subheader={project.category} />
               <CardContent>
-                <Typography variant="body2" color="text.secondary" paragraph>
+                <Typography variant="body2" color="text.primary" paragraph>
                   {project.description}
                 </Typography>
                 <Typography variant="subtitle2" gutterBottom>

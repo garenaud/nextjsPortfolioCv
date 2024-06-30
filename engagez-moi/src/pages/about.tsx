@@ -7,6 +7,7 @@ import Formations from '@/components/formations';
 import Hobbies from '@/components/hobbies';
 import Projects from '@/components/projects';
 import Storytelling from '@/components/storytelling';
+import SocialLinks from '@/components/social';
 import { Grid, Container, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 
@@ -36,6 +37,7 @@ export default function About() {
                 height={300}
                 layout="intrinsic"
               />
+              <SocialLinks />
               <Hobbies />
             </Grid>
           </Grid>

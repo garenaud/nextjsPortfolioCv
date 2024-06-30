@@ -1,86 +1,95 @@
-import Link from 'next/link';
-import { useRouter } from "next/router";
-import { styled } from "@mui/material/styles";
+import React, { useState } from 'react';
+import { Box, Container, Typography, Link, TextField, Button, Grid } from '@mui/material';
+import SocialLinks from './social';
 
-import { Container, Grid, Typography } from "@mui/material";
+const Footer = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-import { routes } from "@/data/routes";
-import Social from "@/components/social";
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Handle form submission (e.g., send data to API)
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Message:', message);
+  };
 
-const FooterContainer = styled('footer')(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
-  width: `100%`,
-  position: "relative",
-  overflow: "hidden",
-  marginTop: "6em",
-  padding: "2em 0 ",
-}));
-
-const LinkTypography = styled(Typography)(({ theme }) => ({
-  fontSize: "1.25em",
-  color: "#fff",
-  "&:hover": {
-    color: theme.palette.info.main,
-  },
-}));
-
-const CopylightTypography = styled(Typography)(({ theme }) => ({
-  color: "#fff",
-  fontSize: "1em",
-  "&:hover": {
-    color: theme.palette.info.main,
-  },
-}));
-
-interface Route {
-  name: string;
-  link: string;
-}
-
-const Footer: React.FC = () => {
-  const path: Route[] = routes;
-  const router = useRouter();
   return (
-    <FooterContainer>
+    <Box
+      component="footer"
+      sx={{
+        py: 3,
+        px: 2,
+        mt: 'auto',
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+      }}
+    >
       <Container maxWidth="lg">
-        <Grid container spacing={3} justifyContent="center">
-          {path.map(({ name, link }) => (
-            <Grid item key={link}>
-              <Link href={link}>
-                <LinkTypography
-                  style={{
-                    fontWeight: router.pathname === link ? "bold" : "normal",
-                    borderBottom:
-                      router.pathname === link ? "1px solid #757ce8" : "none",
-                  }}
-                >
-                  {name}
-                </LinkTypography>
-              </Link>
+        <Typography variant="h6" align="center" gutterBottom>
+          Contact Us
+        </Typography>
+        <form onSubmit={handleSubmit}>
+          <Grid container spacing={2} justifyContent="center">
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                label="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
             </Grid>
-          ))}
-        </Grid>
-        <Grid container direction="column" style={{ margin: "1.2em 0" }}>
-          <Social />
-        </Grid>
-        <Grid
-          item
-          container
-          component={"a"}
-          target="_blank"
-          rel="noreferrer noopener"
-          href="https://engagez-moi.com"
-          justifyContent="center"
-          style={{
-            textDecoration: "none",
-          }}
-        >
-          <CopylightTypography>
-            &copy;Gaëtan Renaud {new Date().getFullYear()}
-          </CopylightTypography>
-        </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                label="Email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                label="Message"
+                multiline
+                rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Button type="submit" variant="contained" color="primary">
+                Submit
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
+        <Box mt={4}>
+          <SocialLinks />
+        </Box>
+        <Box mt={4} textAlign="center">
+          <Typography variant="body1">
+            My sticky footer can be found here.
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {'© '}
+            <Link color="inherit" href="https://your-website.com/">
+              Gaëtan Renaud
+            </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+          </Typography>
+        </Box>
       </Container>
-    </FooterContainer>
+    </Box>
   );
 };
 

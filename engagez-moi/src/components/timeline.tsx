@@ -73,7 +73,7 @@ export default function ExperienceTimeline() {
           <TimelineOppositeContent
             sx={{ mt: 1 }}
             align="right"
-            variant="h6"
+            variant="h5"
             color="text.secondary"
           >
             {item.date}
