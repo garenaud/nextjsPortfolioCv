@@ -1,25 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { Box, Card, CardContent, Typography, LinearProgress, Grid, Select, MenuItem, InputLabel, FormControl, Avatar, SelectChangeEvent } from '@mui/material';
-
-const skills = [
-    { name: 'InDesign', percentage: 90, logo: 'images/indesign.png', category: 'Design' },
-    { name: 'Illustrator', percentage: 85, logo: 'images/adobe-illustrator.png', category: 'Design' },
-    { name: 'Photoshop', percentage: 88, logo: 'images/photoshop.png', category: 'Design' },
-    { name: 'Adobe Acrobat', percentage: 80, logo: 'images/acrobate.png', category: 'Design' },
-    { name: 'JavaScript', percentage: 75, logo: 'images/js.png', category: 'Development' },
-    { name: 'TypeScript', percentage: 75, logo: 'images/typescript.png', category: 'Development' },
-    { name: 'HTML', percentage: 95, logo: 'images/html.png', category: 'Development' },
-    { name: 'CSS', percentage: 85, logo: 'images/css.png', category: 'Development' },
-    { name: 'Docker', percentage: 70, logo: 'images/docker.png', category: 'Development' },
-    { name: 'Figma', percentage: 80, logo: 'images/figma.png', category: 'Design' },
-    { name: 'C++', percentage: 65, logo: 'images/c-logo.png', category: 'Development' },
-    { name: 'C', percentage: 60, logo: 'images/c.png', category: 'Development' },
-    { name: 'React', percentage: 70, logo: 'images/react.png', category: 'Development' },
-    { name: 'PHP', percentage: 75, logo: 'images/php.png', category: 'Development' },
-    { name: 'Tailwind', percentage: 80, logo: 'images/tailwind.png', category: 'Development' },
-    { name: 'Next.js', percentage: 70, logo: 'images/next-js.svg', category: 'Development' }
-  ];
+import skills from '../../public/skills.json'; // Assurez-vous que le chemin d'accès est correct
 
 export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -49,7 +31,7 @@ export default function Skills() {
         </Select>
       </FormControl>
       <Grid container spacing={2}>
-        {filteredSkills.map((skill, index) => (
+        {filteredSkills.map((skill: any, index: number) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card>
               <CardContent>

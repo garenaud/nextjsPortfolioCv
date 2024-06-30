@@ -13,9 +13,11 @@ import Button from '@mui/material/Button';
 // import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-//import theme from '@/styles/theme';
+import theme from '@/styles/theme';
 
 const pages = ['Products', 'Pricing', 'Blog'];
+const bgColor1: string = '#f1eadc';
+const bgColor2: string = '#f9f4ea';
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -27,7 +29,7 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
   return (
-    <AppBar position="static" color="primary">
+    <AppBar position="static" color='primary'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
