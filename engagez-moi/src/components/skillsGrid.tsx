@@ -39,6 +39,7 @@ const SkillsGrid: React.FC<SkillsGridProps> = ({ initialCategory }) => {
               avatar={<Avatar src={skill.logo} sx={{ width: 24, height: 24 }} />}
               label={`${skill.name}`}
               variant="outlined"
+              sx={{ backgroundColor: 'white' }}
             />
           </Grid>
         ))}

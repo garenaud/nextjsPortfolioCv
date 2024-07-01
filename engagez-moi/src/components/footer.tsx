@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Box, Container, Typography, Link, TextField, Button, Grid } from '@mui/material';
 import SocialLinks from './social';
 
+const bgColor1: string = '#f1eadc';
+const bgColor2: string = '#f9f4ea';
+
 const Footer = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -22,13 +25,14 @@ const Footer = () => {
         py: 3,
         px: 2,
         mt: 'auto',
-        backgroundColor: (theme) =>
-          theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+/*         backgroundColor: (theme) =>
+          theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.grey[800], */
+        backgroundColor: bgColor2,
       }}
     >
       <Container maxWidth="lg">
         <Typography variant="h6" align="center" gutterBottom>
-          Contact Us
+          Contactez-moi
         </Typography>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2} justifyContent="center">
@@ -67,7 +71,7 @@ const Footer = () => {
             </Grid>
             <Grid item xs={12}>
               <Button type="submit" variant="contained" color="primary">
-                Submit
+                Envoyer
               </Button>
             </Grid>
           </Grid>
@@ -77,7 +81,7 @@ const Footer = () => {
         </Box>
         <Box mt={4} textAlign="center">
           <Typography variant="body1">
-            My sticky footer can be found here.
+          Gaëtan Renaud, passionné par le design et le développement web.
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {'© '}

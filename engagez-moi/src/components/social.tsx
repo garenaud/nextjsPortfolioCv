@@ -9,6 +9,7 @@ const SocialLinks = () => {
       sx={{
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
         gap: 2,
         mt: 2,
       }}

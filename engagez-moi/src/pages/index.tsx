@@ -11,13 +11,21 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import SkillsGrid from '@/components/skillsGrid';
-import Paper from '@mui/material/Paper';
-import theme from '@/styles/theme';
-import { Palette } from '@mui/icons-material';
+import Projects from '@/components/projects';
+import GraphicPortfolio from '@/components/graphicPortfolio';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import SocialLinks from '@/components/social';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import { Margin } from '@mui/icons-material';
 
 const bgColor1: string = '#f1eadc';
 const bgColor2: string = '#f9f4ea';
+
 const Home: React.FC = () => {
+  const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Layout>
       <Box
@@ -27,37 +35,70 @@ const Home: React.FC = () => {
           py: 4, // padding vertical
         }}
       >
-      <Container maxWidth="xl">
-        <Grid container spacing={20} alignItems="center" justifyContent="center" style={{ minHeight: '100vh' }}>
-          <Grid item xs={12} md={6} container direction="column" justifyContent="center">
-            <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>Gaëtan Renaud</Typography>
-            <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Junior</Typography>
-            <Typography variant='h1' color="primary" gutterBottom ml={10}>Developper</Typography>
-            <Typography variant='body1' gutterBottom mb={5}>
-              Je m&apos;appelle Gaëtan Renaud et je suis passionné par le design et le développement web.
-              Ce CV interactif est conçu pour vous offrir un aperçu de mon parcours professionnel,
-              de mes compétences et de mes expériences dans le domaine du design graphique
-              et du développement informatique. Découvrez mes projets, mes compétences et les diverses
-              étapes de ma carrière. Explorez mon univers et n&apos;hésitez pas à me contacter pour toute collaboration
-              ou opportunité.
-            </Typography>
-            <Link href="/about">
-              <Button variant="contained" color="primary">
-                Cliquez moi
-              </Button>
-            </Link>
+        <Container maxWidth="xl">
+          <Grid container spacing={20} alignItems="center" justifyContent="center">
+            {isXs && (
+              <Grid item xs={12}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                  <Image
+                    src="/images/grenaud-Rond.png"
+                    alt="Description de l'image"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </Box>
+                <SocialLinks />
+              </Grid>
+            )}
+            <Grid item xs={12} md={6} container direction="column" justifyContent="center">
+              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>Gaëtan Renaud</Typography>
+              <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Junior</Typography>
+              <Typography variant='h1' color="primary" gutterBottom ml={10}>Developper</Typography>
+              <Typography variant='body1' gutterBottom mb={5}>
+                Je m&apos;appelle Gaëtan Renaud et je suis passionné par le design et le développement web.
+                Ce CV interactif est conçu pour vous offrir un aperçu de mon parcours professionnel,
+                de mes compétences et de mes expériences dans le domaine du design graphique
+                et du développement informatique. Découvrez mes projets, mes compétences et les diverses
+                étapes de ma carrière. Explorez mon univers et n&apos;hésitez pas à me contacter pour toute collaboration
+                ou opportunité.
+              </Typography>
+              <Grid container spacing={2} justifyContent="center">
+                <Grid item>
+                  <Link href="/about">
+                    <Button variant="contained" color="primary">
+                      Voir mon cv en ligne
+                    </Button>
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Button
+                    variant="outlined"
+                    color="secondary"
+                    startIcon={<PictureAsPdfIcon />}
+                    href="/CV-Grenaud-JuniorDev.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    télécharger le CV
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+            {!isXs && (
+              <Grid item xs={12} md={6}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
+                  <Image
+                    src="/images/grenaud-Rond.png"
+                    alt="Description de l'image"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </Box>
+                <SocialLinks />
+              </Grid>
+            )}
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Image
-              src="/images/grenaud-Rond.png" 
-              alt="Description de l'image" 
-              width={1000}
-              height={1000}
-              layout="intrinsic"
-            />
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
       </Box>
       <Box
         sx={{
@@ -67,51 +108,87 @@ const Home: React.FC = () => {
         }}
       >
         <Container maxWidth="xl">
-          <Grid xs={12} md={6}>
-            <Typography variant='h5' color="primary" gutterBottom>A propos de moi</Typography>
-            <Typography variant='h3' gutterBottom>Une reconversion dans le développement web</Typography>
-            <Typography variant='body1'>
-              Plus d'informations sur moi ici...
-            </Typography>
-            <Grid container spacing={2}>
-              <Grid item>
-                <Card sx={{ minWidth: 275, borderRadius: 4 }}>
-                  <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                      MA FORMATION
-                    </Typography>
-                    <Image src="/images/42_logo.svg" alt="42" width={150} height={150} />
-                    <Typography variant="h5" component="div">
-                      benevolent
-                    </Typography>
-                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      adjective
-                    </Typography>
-                    <Typography variant="body2">
-                      well meaning and kindly.
-                      <br />
-                      {'"a benevolent smile"'}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">Learn More</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              <Grid item>
-                <SkillsGrid initialCategory='Development' />
-                <Button variant="outlined" color="primary">
-                  Télécharger mon CV
-                </Button>
-              </Grid>
+          <Grid container spacing={6}>
+            <Grid item xs={12} md={6}>
+              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>A propos de moi</Typography>
+              <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Reconversion</Typography>
+              <Typography variant='h1' color="primary" gutterBottom ml={5}>en développeur</Typography>
+              <Typography variant='body1'>
+                Fort de plus de 15 ans d'expérience dans le domaine du graphisme, j'ai décidé de me réorienter vers le développement web après avoir été sélectionné à l'école 42. Bien que je maîtrisais déjà le HTML et le CSS, mes débuts avec le JavaScript étaient plus laborieux. Cependant, grâce à un parcours intensif d'un an en C et C++, j'ai retrouvé du plaisir à travailler sur des projets web, notamment en JavaScript vanilla.
+              </Typography>
+              <Typography variant='body1'>
+                Mon dernier projet m'a permis de créer un mini-framework frontend, me donnant ainsi une base solide pour explorer les frameworks modernes. Désormais, je m'épanouis pleinement dans le développement web, tant sur le frontend que sur le backend. Je suis curieux et j'aspire à rejoindre une équipe où je pourrais continuer à apprendre et à prouver mes compétences.
+              </Typography>
+              <Typography variant='subtitle1' color="primary" gutterBottom>Technologie</Typography>
+              <SkillsGrid initialCategory='Development' />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Projects />
+{/*              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2} mt={2}>Ma formation</Typography>
+               <Grid container spacing={2}>
+                <Grid item xs={2} md={3}>
+                  <Image src="/images/42_logo.svg" alt="42" width={150} height={150} />
+                </Grid>
+                <Grid item xs={12} md={9}>
+                  <Typography variant='body1' gutterBottom>
+                  L'école 42 propose une formation innovante en développement informatique basée sur le peer-learning. Sans frais de scolarité et sans professeurs, les étudiants apprennent en collaborant sur des projets pratiques. La formation débute par "La Piscine", une phase intensive d'un mois qui teste leur capacité à apprendre rapidement et à travailler sous pression. Cette approche autonome et créative prépare les étudiants à maîtriser diverses technologies et à s'adapter aux défis du monde professionnel.
+                  </Typography>
+                </Grid>
+              </Grid> */}
             </Grid>
           </Grid>
-          <Grid xs={12} md={6}>
+          
+        </Container>
+      </Box>
+      <Box
+        sx={{
+          width: '100%',
+          backgroundColor: bgColor1,
+          py: 4, // padding vertical
+        }}
+      >
+        <Container maxWidth="xl">
+          <Grid container spacing={5} justifyContent="center">
+            <Grid item xs={12} md={6} container direction="column" justifyContent="center">
+              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>UI Designer</Typography>
+              <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Expérience</Typography>
+              <Typography variant='h1' color="primary" gutterBottom ml={10}>de graphiste</Typography>
+              <Typography variant='body1' gutterBottom mb={5}>
+              Avec plus de 15 ans d'expérience dans le graphisme, j'ai travaillé dans divers secteurs en tant que polygraphe et UI designer. J'ai conçu des interfaces utilisateur pour des applications, créé des logos, icônes, et divers supports publicitaires. Mon parcours inclut des missions de mise en page, de traitement d'images, et de gestion de production. Mes compétences incluent l'utilisation d'outils comme InDesign, Illustrator, et Photoshop, ainsi que la communication efficace avec les développeurs pour améliorer l'expérience utilisateur. Mon approche créative et polyvalente m'a permis de m'adapter à différents projets et environnements professionnels.
+              </Typography>
+              <Grid container spacing={2} justifyContent="center">
+                <Grid item>
+                  <Link href="/about">
+                    <Button variant="contained" color="primary">
+                      Voir mon cv en ligne
+                    </Button>
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Button
+                    variant="outlined"
+                    color="secondary"
+                    startIcon={<PictureAsPdfIcon />}
+                    href="/CV-Grenaud-JuniorDev.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    télécharger le CV
+                  </Button>
+                </Grid>
+              </Grid>
+              <Typography variant='subtitle1' color="primary" gutterBottom>Technologie</Typography>
+              <SkillsGrid initialCategory='Design' />
+            </Grid>
+            <Grid item xs={12} md={6} mb={4}>
 
+              <GraphicPortfolio />
+            </Grid>
           </Grid>
         </Container>
       </Box>
     </Layout>
   );
 };
+
 export default Home;

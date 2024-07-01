@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, Typography, Grid, Container, Chip, Avatar, Button, Link } from '@mui/material';
+import { Card, CardContent, CardHeader, Typography, Grid, Container, Chip, Avatar, Button, Box } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
@@ -62,65 +62,70 @@ const technologyIcons: Record<Technology, string> = {
 
 const Projects = () => {
   return (
-    <Container>
-      <Typography variant="h5" gutterBottom>
-        Projets
-      </Typography>
-      <Grid container spacing={2}>
-        {projects.map((project, index) => (
-          <Grid item xs={12} sm={6} key={index}>
-            <Card>
-              <CardHeader title={project.title} subheader={project.category} />
-              <CardContent>
-                <Typography variant="body2" color="text.primary" paragraph>
-                  {project.description}
-                </Typography>
-                <Typography variant="subtitle2" gutterBottom>
-                  Technologies utilisées:
-                </Typography>
-                <Grid container spacing={1} sx={{ marginBottom: 2 }}>
-                  {project.technologies.map((tech, idx) => (
-                    <Grid item key={idx}>
-                      <Chip
-                        avatar={<Avatar src={technologyIcons[tech]} sx={{ width: 24, height: 24 }} />}
-                        label={tech}
-                        variant="outlined"
-                      />
+    <Box sx={{ height: '100%', maxHeight: '500px', overflowY: 'auto' }}>
+      <Container disableGutters maxWidth={false}>
+        <Typography variant="subtitle1" color="primary" gutterBottom>
+          Projets
+        </Typography>
+        <Grid container spacing={2} sx={{ width: '100%' }}>
+          {projects.map((project, index) => (
+            <Grid item xs={12} sm={6} md={6} lg={4} key={index} sx={{ display: 'flex', minWidth: 300 }}>
+              <Card sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <CardHeader title={project.title} subheader={project.category} />
+                <CardContent sx={{ flex: '1 1 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <Typography variant="body2" color="text.primary" paragraph>
+                    {project.description}
+                  </Typography>
+                  <Box>
+                    <Typography variant="subtitle2" gutterBottom>
+                      Technologies utilisées:
+                    </Typography>
+                    <Grid container spacing={1} sx={{ marginBottom: 2 }}>
+                      {project.technologies.map((tech, idx) => (
+                        <Grid item key={idx}>
+                          <Chip
+                            avatar={<Avatar src={technologyIcons[tech]} sx={{ width: 24, height: 24 }} />}
+                            label={tech}
+                            variant="outlined"
+                            sx={{ color: 'black', backgroundColor: 'white' }}
+                          />
+                        </Grid>
+                      ))}
                     </Grid>
-                  ))}
-                </Grid>
-                <Grid container spacing={1}>
-                  <Grid item>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      startIcon={<GitHubIcon />}
-                      href={project.repoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Repo GitHub
-                    </Button>
+                  </Box>
+                  <Grid container spacing={1}>
+                    <Grid item>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        startIcon={<GitHubIcon />}
+                        href={project.repoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Repo GitHub
+                      </Button>
+                    </Grid>
+                    <Grid item>
+                      <Button
+                        variant="outlined"
+                        color="secondary"
+                        startIcon={<PictureAsPdfIcon />}
+                        href={project.pdfLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Voir le PDF
+                      </Button>
+                    </Grid>
                   </Grid>
-                  <Grid item>
-                    <Button
-                      variant="outlined"
-                      color="secondary"
-                      startIcon={<PictureAsPdfIcon />}
-                      href={project.pdfLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Voir le PDF
-                    </Button>
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 
