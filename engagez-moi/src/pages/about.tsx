@@ -8,13 +8,17 @@ import Hobbies from '@/components/hobbies';
 import Projects from '@/components/projects';
 import Storytelling from '@/components/storytelling';
 import SocialLinks from '@/components/social';
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, useTheme } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 
 const bgColor1: string = '#f1eadc';
 const bgColor2: string = '#f9f4ea';
 
 export default function About() {
+  const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Layout>
       <Box
@@ -24,21 +28,42 @@ export default function About() {
           py: 4, // padding vertical
         }}
       >
-        <Container>
+        <Container maxWidth="xl">
           <Grid container spacing={2}>
+            {isXs && (
+              <Grid item xs={12}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                  <Image
+                    src="/images/grenaud-Rond.png"
+                    alt="Description de l'image"
+                    layout="fill"
+                    style={{ objectFit: 'contain' }}
+
+                  />
+                </Box>
+                <SocialLinks />
+                <Hobbies />
+              </Grid>
+            )}
             <Grid item xs={12} md={6}>
               <Storytelling />
             </Grid>
+            {!isXs && (
+              <Grid item xs={12} md={6}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                  <Image
+                    src="/images/grenaud-Rond.png"
+                    alt="Description de l'image"
+                    layout="fill"
+                    style={{ objectFit: 'contain' }}
+
+                  />
+                </Box>
+                <SocialLinks />
+                <Hobbies />
+              </Grid>
+            )}
             <Grid item xs={12} md={6}>
-              <Image
-                src="/images/grenaud-Rond.png" 
-                alt="Description de l'image" 
-                width={500}
-                height={300}
-                layout="intrinsic"
-              />
-              <SocialLinks />
-              <Hobbies />
             </Grid>
           </Grid>
         </Container>
@@ -51,7 +76,7 @@ export default function About() {
           py: 4, // padding vertical
         }}
       >
-        <Container>
+        <Container maxWidth="xl">
           <Grid container spacing={4}>
             <Grid item xs={12} md={8}>
               <Typography variant='h2' color="primary" gutterBottom>Mon expérience</Typography>
@@ -71,12 +96,12 @@ export default function About() {
           py: 4, // padding vertical
         }}
       >
-        <Container>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={3}>
+        <Container maxWidth="xl">
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={12}>
               <Skills />
             </Grid>
-            <Grid item xs={12} md={9}>
+            <Grid item xs={12} md={12}>
               <Projects />
             </Grid>
           </Grid>

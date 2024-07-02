@@ -30,40 +30,32 @@ export default function Skills() {
           <MenuItem value="Design">Design</MenuItem>
         </Select>
       </FormControl>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+          gap: 2,
+        }}
+      >
         {filteredSkills.map((skill: any, index: number) => (
-          <Box
-            key={index}
-            sx={{
-              flex: '1 1 100%', // Full width on smaller screens
-              '@media (min-width: 600px)': {
-                flex: '1 1 calc(50% - 16px)', // Two columns on small screens
-              },
-              '@media (min-width: 900px)': {
-                flex: '1 1 calc(33.33% - 16px)', // Three columns on medium screens and up
-              },
-              boxSizing: 'border-box',
-            }}
-          >
-            <Card sx={{ height: '100%' }}>
-              <CardContent>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  <Avatar src={skill.logo} alt={skill.name} sx={{ mr: 2 }} />
-                  <Typography variant="h6" component="div">
-                    {skill.name}
-                  </Typography>
+          <Card key={index} sx={{ height: 100 }}>
+            <CardContent>
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                <Avatar src={skill.logo} alt={skill.name} sx={{ mr: 2 }} />
+                <Typography variant="h6" component="div">
+                  {skill.name}
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Box sx={{ width: '100%', mr: 1 }}>
+                  <LinearProgress variant="determinate" value={skill.percentage} />
                 </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Box sx={{ width: '100%', mr: 1 }}>
-                    <LinearProgress variant="determinate" value={skill.percentage} />
-                  </Box>
-                  <Box sx={{ minWidth: 35 }}>
-                    <Typography variant="body2" color="text.secondary">{`${skill.percentage}%`}</Typography>
-                  </Box>
+                <Box sx={{ minWidth: 35 }}>
+                  <Typography variant="body2" color="text.secondary">{`${skill.percentage}%`}</Typography>
                 </Box>
-              </CardContent>
-            </Card>
-          </Box>
+              </Box>
+            </CardContent>
+          </Card>
         ))}
       </Box>
     </Box>

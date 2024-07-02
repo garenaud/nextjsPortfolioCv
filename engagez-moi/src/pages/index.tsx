@@ -32,19 +32,19 @@ const Home: React.FC = () => {
         sx={{
           width: '100%',
           backgroundColor: bgColor1,
-          py: 4, // padding vertical
         }}
       >
         <Container maxWidth="xl">
-          <Grid container spacing={20} alignItems="center" justifyContent="center">
+          <Grid container spacing={2} alignItems="center" justifyContent="center">
             {isXs && (
               <Grid item xs={12}>
-                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%', margin: -10}}>
                   <Image
                     src="/images/grenaud-Rond.png"
                     alt="Description de l'image"
                     layout="fill"
-                    objectFit="contain"
+                    style={{ objectFit: 'contain' }}
+
                   />
                 </Box>
                 <SocialLinks />
@@ -86,7 +86,7 @@ const Home: React.FC = () => {
             </Grid>
             {!isXs && (
               <Grid item xs={12} md={6}>
-                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
                   <Image
                     src="/images/grenaud-Rond.png"
                     alt="Description de l'image"
@@ -108,8 +108,21 @@ const Home: React.FC = () => {
         }}
       >
         <Container maxWidth="xl">
-          <Grid container spacing={6}>
+          <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
+            {isXs && (
+              <Grid item xs={12}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                  <Image
+                    src="/images/RecWebDev.webp"
+                    alt="Description de l'image"
+                    layout="fill"
+                    style={{ objectFit: 'contain' }}
+
+                  />
+                </Box>
+              </Grid>
+            )}
               <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>A propos de moi</Typography>
               <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Reconversion</Typography>
               <Typography variant='h1' color="primary" gutterBottom ml={5}>en développeur</Typography>
@@ -122,22 +135,22 @@ const Home: React.FC = () => {
               <Typography variant='subtitle1' color="primary" gutterBottom>Technologie</Typography>
               <SkillsGrid initialCategory='Development' />
             </Grid>
+            {!isXs && (
+              <Grid item xs={12} md={6}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                  <Image
+                    src="/images/RecWebDev.webp"
+                    alt="Description de l'image"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </Box>
+              </Grid>
+            )}
+          </Grid>
             <Grid item xs={12} md={6}>
               <Projects />
-{/*              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2} mt={2}>Ma formation</Typography>
-               <Grid container spacing={2}>
-                <Grid item xs={2} md={3}>
-                  <Image src="/images/42_logo.svg" alt="42" width={150} height={150} />
-                </Grid>
-                <Grid item xs={12} md={9}>
-                  <Typography variant='body1' gutterBottom>
-                  L'école 42 propose une formation innovante en développement informatique basée sur le peer-learning. Sans frais de scolarité et sans professeurs, les étudiants apprennent en collaborant sur des projets pratiques. La formation débute par "La Piscine", une phase intensive d'un mois qui teste leur capacité à apprendre rapidement et à travailler sous pression. Cette approche autonome et créative prépare les étudiants à maîtriser diverses technologies et à s'adapter aux défis du monde professionnel.
-                  </Typography>
-                </Grid>
-              </Grid> */}
             </Grid>
-          </Grid>
-          
         </Container>
       </Box>
       <Box
@@ -148,7 +161,20 @@ const Home: React.FC = () => {
         }}
       >
         <Container maxWidth="xl">
-          <Grid container spacing={5} justifyContent="center">
+          <Grid container spacing={2} justifyContent="center">
+          {isXs && (
+              <Grid item xs={12}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                  <Image
+                    src="/images/designCover.webp"
+                    alt="Description de l'image"
+                    layout="fill"
+                    style={{ objectFit: 'contain' }}
+
+                  />
+                </Box>
+              </Grid>
+            )}
             <Grid item xs={12} md={6} container direction="column" justifyContent="center">
               <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>UI Designer</Typography>
               <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Expérience</Typography>
@@ -180,11 +206,22 @@ const Home: React.FC = () => {
               <Typography variant='subtitle1' color="primary" gutterBottom>Technologie</Typography>
               <SkillsGrid initialCategory='Design' />
             </Grid>
-            <Grid item xs={12} md={6} mb={4}>
-
+            {!isXs && (
+              <Grid item xs={12} md={6}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                  <Image
+                    src="/images/designCover.webp"
+                    alt="Description de l'image"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </Box>
+              </Grid>
+            )}
+          </Grid>
+            <Grid item>
               <GraphicPortfolio />
             </Grid>
-          </Grid>
         </Container>
       </Box>
     </Layout>

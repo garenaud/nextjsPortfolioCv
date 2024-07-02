@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {
   Container,
   Typography,
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
   Select,
   MenuItem,
   FormControl,
@@ -19,6 +15,9 @@ import {
 } from '@mui/material';
 import { SelectChangeEvent } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 type GraphicWork = {
   title: string;
@@ -29,7 +28,7 @@ type GraphicWork = {
 
 const GraphicPortfolio = () => {
   const [graphicWorks, setGraphicWorks] = useState<GraphicWork[]>([]);
-  const [filter, setFilter] = useState<string>('Tous');
+  const [filter, setFilter] = useState<string>('Logo');
   const [selectedWork, setSelectedWork] = useState<GraphicWork | null>(null);
 
   useEffect(() => {
@@ -56,9 +55,32 @@ const GraphicPortfolio = () => {
 
   const filteredWorks = filter === 'Tous' ? graphicWorks : graphicWorks.filter(work => work.type === filter);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <Paper elevation={3} sx={{ padding: 2, height: '100%', overflowY: 'auto' }}>
-      <Container>
+      <Box>
         <Typography variant="subtitle1" color="primary" gutterBottom>
           Mon Portfolio de Graphisme
         </Typography>
@@ -78,44 +100,47 @@ const GraphicPortfolio = () => {
             {/* Ajoutez d'autres types ici */}
           </Select>
         </FormControl>
-        <Grid container spacing={2} sx={{ maxHeight: '100%', overflowY: 'auto' }}>
-          {filteredWorks.map((work, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card onClick={() => handleOpenModal(work)} sx={{ cursor: 'pointer' }}>
-                {work.image.endsWith('.pdf') ? (
-                  <CardContent>
-                    <Typography variant="h6" component="div">
-                      {work.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {work.description}
-                    </Typography>
-                    <a href={work.image} target="_blank" rel="noopener noreferrer">
-                      Voir le PDF
-                    </a>
-                  </CardContent>
-                ) : (
-                  <>
-                    <CardMedia
-                      component="img"
-                      height="200"
-                      image={work.image}
-                      alt={work.title}
-                    />
-                    <CardContent>
+        <Box sx={{ maxWidth: '100%' }}>
+          <Slider {...settings}>
+            {filteredWorks.map((work, index) => (
+              <Box key={index} sx={{ paddingX: 1 }}>
+                <Paper
+                  elevation={3}
+                  onClick={() => handleOpenModal(work)}
+                  sx={{
+                    cursor: 'pointer',
+                    height: '300px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    overflow: 'hidden',
+                    margin: '2 auto',
+                  }}
+                >
+                  {work.image.endsWith('.pdf') ? (
+                    <Box sx={{ padding: 2 }}>
                       <Typography variant="h6" component="div">
                         {work.title}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         {work.description}
                       </Typography>
-                    </CardContent>
-                  </>
-                )}
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+                      <a href={work.image} target="_blank" rel="noopener noreferrer">
+                        Voir le PDF
+                      </a>
+                    </Box>
+                  ) : (
+                    <img
+                      src={work.image}
+                      alt={work.title}
+                      style={{ maxHeight: '100%', maxWidth: '100%' }}
+                    />
+                  )}
+                </Paper>
+              </Box>
+            ))}
+          </Slider>
+        </Box>
         <Dialog open={!!selectedWork} onClose={handleCloseModal} maxWidth="md" fullWidth>
           <DialogTitle>
             {selectedWork?.title}
@@ -152,8 +177,7 @@ const GraphicPortfolio = () => {
             </Typography>
           </DialogContent>
         </Dialog>
-      </Container>
-    </Paper>
+      </Box>
   );
 };
 
