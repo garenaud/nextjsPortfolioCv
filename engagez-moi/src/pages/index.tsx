@@ -7,9 +7,6 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import SkillsGrid from '@/components/skillsGrid';
 import Projects from '@/components/projects';
 import GraphicPortfolio from '@/components/graphicPortfolio';
@@ -17,7 +14,6 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import SocialLinks from '@/components/social';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import { Margin } from '@mui/icons-material';
 
 const bgColor1: string = '#f1eadc';
 const bgColor2: string = '#f9f4ea';

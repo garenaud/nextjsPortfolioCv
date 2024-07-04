@@ -1,6 +1,6 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { lighten, darken } from '@mui/system/colorManipulator';
-import { Open_Sans, Average_Sans, Akshar } from 'next/font/google';
+import { Open_Sans, Akshar } from 'next/font/google';
 
 export const opensans = Open_Sans({
   subsets: ['latin'],
@@ -19,11 +19,11 @@ const aksharRegular = Akshar({
   subsets: ['latin'],
 });
 
-const aksharMedium = Akshar({
+/* const aksharMedium = Akshar({
   weight: '500',
   display: 'swap',
   subsets: ['latin'],
-});
+}); */
 
 const aksharSemiBold = Akshar({
   weight: '600',

@@ -3,7 +3,6 @@ import { Box, Container, Typography, Link, TextField, Button, Grid } from '@mui/
 import SocialLinks from './social';
 import emailjs from 'emailjs-com';
 
-const bgColor1: string = '#f1eadc';
 const bgColor2: string = '#f9f4ea';
 
 const Footer = () => {

@@ -1,25 +1,23 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document';
+import { AppType } from 'next/app';
 import createEmotionServer from '@emotion/server/create-instance';
 import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
 
-// Créez une fonction pour créer un cache Emotion
 function createEmotionCache() {
   return createCache({ key: 'css', prepend: true });
 }
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps & { styles: JSX.Element[] }> {
     const originalRenderPage = ctx.renderPage;
 
-    // Créez un cache Emotion et une instance de serveur Emotion
     const cache = createEmotionCache();
     const { extractCriticalToChunks } = createEmotionServer(cache);
 
     ctx.renderPage = () =>
       originalRenderPage({
-        // Fournir le cache Emotion à l'application
-        enhanceApp: (App: any) => (props: any) =>
+        enhanceApp: (App: AppType) => (props) =>
           (
             <CacheProvider value={cache}>
               <App {...props} />

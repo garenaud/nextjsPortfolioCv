@@ -84,6 +84,6 @@ const Formations = () => {
       ))}
     </div>
   );
-}
+};
 
 export default Formations;

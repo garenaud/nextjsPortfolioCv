@@ -12,3 +12,4 @@ export default NextAuth({
     // Ajoutez d'autres fournisseurs ici
   ],
 }); */
+export {};

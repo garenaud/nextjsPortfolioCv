@@ -3,6 +3,13 @@ import { useState } from 'react';
 import { Box, Card, CardContent, Typography, LinearProgress, Select, MenuItem, InputLabel, FormControl, Avatar, SelectChangeEvent } from '@mui/material';
 import skills from '../../public/skills.json'; // Assurez-vous que le chemin d'accès est correct
 
+interface Skill {
+  name: string;
+  percentage: number;
+  logo: string;
+  category: string;
+}
+
 export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -37,7 +44,7 @@ export default function Skills() {
           gap: 2,
         }}
       >
-        {filteredSkills.map((skill: any, index: number) => (
+        {filteredSkills.map((skill: Skill, index: number) => (
           <Card key={index} sx={{ height: 100 }}>
             <CardContent>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>

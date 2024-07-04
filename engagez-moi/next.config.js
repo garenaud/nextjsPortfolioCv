@@ -1,11 +1,20 @@
+const isProd = process.env.NODE_ENV === 'production';
+
 module.exports = {
   swcMinify: true,
+  assetPrefix: isProd ? '/nextjsPortfolioCv/' : '',
+  basePath: isProd ? '/nextjsPortfolioCv' : '',
+  trailingSlash: true,
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
   webpack: (config, { dev }) => {
     if (dev) {
       config.watchOptions = {
-        poll: 1000,  // Vérifiez les changements toutes les secondes
-        aggregateTimeout: 300,  // Regroupe les changements pour éviter des recompilations trop fréquentes
-        ignored: /node_modules/, // Ignore les changements dans node_modules
+        poll: 1000,
+        aggregateTimeout: 300,
+        ignored: /node_modules/,
       };
     }
     return config;

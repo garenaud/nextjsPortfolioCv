@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Card, CardContent, CardHeader, Grid, Chip, Avatar, Button, Container, Paper, CardActions } from '@mui/material';
+import { Box, Typography, Card, CardContent, CardHeader, Grid, Chip, Avatar, Button, Container, CardActions } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import Slider from 'react-slick';
