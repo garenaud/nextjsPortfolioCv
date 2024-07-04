@@ -181,25 +181,7 @@ const Home: React.FC = () => {
               Avec plus de 15 ans d'expérience dans le graphisme, j'ai travaillé dans divers secteurs en tant que polygraphe et UI designer. J'ai conçu des interfaces utilisateur pour des applications, créé des logos, icônes, et divers supports publicitaires. Mon parcours inclut des missions de mise en page, de traitement d'images, et de gestion de production. Mes compétences incluent l'utilisation d'outils comme InDesign, Illustrator, et Photoshop, ainsi que la communication efficace avec les développeurs pour améliorer l'expérience utilisateur. Mon approche créative et polyvalente m'a permis de m'adapter à différents projets et environnements professionnels.
               </Typography>
               <Grid container spacing={2} justifyContent="center">
-                <Grid item>
-                  <Link href="/about">
-                    <Button variant="contained" color="primary">
-                      Voir mon cv en ligne
-                    </Button>
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Button
-                    variant="outlined"
-                    color="secondary"
-                    startIcon={<PictureAsPdfIcon />}
-                    href="/CV-Grenaud-JuniorDev.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    télécharger le CV
-                  </Button>
-                </Grid>
+                
               </Grid>
               <Typography variant='subtitle1' color="primary" gutterBottom>Technologie</Typography>
               <SkillsGrid initialCategory='Design' />
