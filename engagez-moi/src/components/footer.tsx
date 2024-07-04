@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Container, Typography, Link, TextField, Button, Grid } from '@mui/material';
 import SocialLinks from './social';
+import emailjs from 'emailjs-com';
 
 const bgColor1: string = '#f1eadc';
 const bgColor2: string = '#f9f4ea';
@@ -12,10 +13,25 @@ const Footer = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Handle form submission (e.g., send data to API)
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+      to_name: 'Gaëtan Renaud' // Remplacez par le nom que vous souhaitez utiliser
+    };
+
+    emailjs.send('service_sqayfyp', 'template_pxfnork', templateParams, 'hVfdbJc3UgDOQRSEP')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Message envoyé avec succès!');
+        setName('');
+        setEmail('');
+        setMessage('');
+      }, (error) => {
+        console.log('FAILED...', error);
+        alert('Une erreur est survenue, veuillez réessayer.');
+      });
   };
 
   return (
@@ -25,8 +41,6 @@ const Footer = () => {
         py: 3,
         px: 2,
         mt: 'auto',
-/*         backgroundColor: (theme) =>
-          theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.grey[800], */
         backgroundColor: bgColor2,
       }}
     >
@@ -40,7 +54,7 @@ const Footer = () => {
               <TextField
                 variant="outlined"
                 fullWidth
-                label="Name"
+                label="Nom"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -81,11 +95,11 @@ const Footer = () => {
         </Box>
         <Box mt={4} textAlign="center">
           <Typography variant="body1">
-          Gaëtan Renaud, passionné par le design et le développement web.
+            Gaëtan Renaud, passionné par le design et le développement web.
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {'© '}
-            <Link color="inherit" href="https://your-website.com/">
+            <Link color="inherit" href="https://engagez-moi.com/">
               Gaëtan Renaud
             </Link>{' '}
             {new Date().getFullYear()}

@@ -42,7 +42,6 @@ const Home: React.FC = () => {
                   <Image
                     src="/images/grenaud-Rond.png"
                     alt="Description de l'image"
-                    layout="fill"
                     style={{ objectFit: 'contain' }}
 
                   />
@@ -91,7 +90,6 @@ const Home: React.FC = () => {
                     src="/images/grenaud-Rond.png"
                     alt="Description de l'image"
                     layout="fill"
-                    objectFit="contain"
                   />
                 </Box>
                 <SocialLinks />

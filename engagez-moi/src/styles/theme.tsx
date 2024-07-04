@@ -106,6 +106,10 @@ let theme = createTheme({
         body: {
           backgroundColor: backgroundColor,
         },
+        a: {
+          textDecoration: 'none',
+          color: 'inherit',
+        },
       },
     },
   },
