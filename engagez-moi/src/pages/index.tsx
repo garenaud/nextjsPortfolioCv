@@ -38,12 +38,11 @@ const Home: React.FC = () => {
           <Grid container spacing={2} alignItems="center" justifyContent="center">
             {isXs && (
               <Grid item xs={12}>
-                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%', margin: -10}}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                   <Image
                     src="/images/grenaud-Rond.png"
                     alt="Description de l'image"
-                    style={{ objectFit: 'contain' }}
-
+                    fill
                   />
                 </Box>
                 <SocialLinks />
@@ -85,11 +84,11 @@ const Home: React.FC = () => {
             </Grid>
             {!isXs && (
               <Grid item xs={12} md={6}>
-                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                   <Image
                     src="/images/grenaud-Rond.png"
                     alt="Description de l'image"
-                    layout="fill"
+                    fill
                   />
                 </Box>
                 <SocialLinks />
@@ -108,19 +107,17 @@ const Home: React.FC = () => {
         <Container maxWidth="xl">
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
-            {isXs && (
-              <Grid item xs={12}>
-                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
-                  <Image
-                    src="/images/RecWebDev.webp"
-                    alt="Description de l'image"
-                    layout="fill"
-                    style={{ objectFit: 'contain' }}
-
-                  />
-                </Box>
-              </Grid>
-            )}
+              {isXs && (
+                <Grid item xs={12}>
+                  <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
+                    <Image
+                      src="/images/RecWebDev.webp"
+                      alt="Description de l'image"
+                      fill
+                    />
+                  </Box>
+                </Grid>
+              )}
               <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>A propos de moi</Typography>
               <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Reconversion</Typography>
               <Typography variant='h1' color="primary" gutterBottom ml={5}>en développeur</Typography>
@@ -135,20 +132,19 @@ const Home: React.FC = () => {
             </Grid>
             {!isXs && (
               <Grid item xs={12} md={6}>
-                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                   <Image
                     src="/images/RecWebDev.webp"
                     alt="Description de l'image"
-                    layout="fill"
-                    objectFit="contain"
+                    fill
                   />
                 </Box>
               </Grid>
             )}
           </Grid>
-            <Grid item xs={12} md={6}>
-              <Projects />
-            </Grid>
+          <Grid item xs={12} md={6}>
+            <Projects />
+          </Grid>
         </Container>
       </Box>
       <Box
@@ -160,15 +156,13 @@ const Home: React.FC = () => {
       >
         <Container maxWidth="xl">
           <Grid container spacing={2} justifyContent="center">
-          {isXs && (
+            {isXs && (
               <Grid item xs={12}>
-                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                   <Image
                     src="/images/designCover.webp"
                     alt="Description de l'image"
-                    layout="fill"
-                    style={{ objectFit: 'contain' }}
-
+                    fill
                   />
                 </Box>
               </Grid>
@@ -178,22 +172,20 @@ const Home: React.FC = () => {
               <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Expérience</Typography>
               <Typography variant='h1' color="primary" gutterBottom ml={10}>de graphiste</Typography>
               <Typography variant='body1' gutterBottom mb={5}>
-              Avec plus de 15 ans d'expérience dans le graphisme, j'ai travaillé dans divers secteurs en tant que polygraphe et UI designer. J'ai conçu des interfaces utilisateur pour des applications, créé des logos, icônes, et divers supports publicitaires. Mon parcours inclut des missions de mise en page, de traitement d'images, et de gestion de production. Mes compétences incluent l'utilisation d'outils comme InDesign, Illustrator, et Photoshop, ainsi que la communication efficace avec les développeurs pour améliorer l'expérience utilisateur. Mon approche créative et polyvalente m'a permis de m'adapter à différents projets et environnements professionnels.
+                Avec plus de 15 ans d'expérience dans le graphisme, j'ai travaillé dans divers secteurs en tant que polygraphe et UI designer. J'ai conçu des interfaces utilisateur pour des applications, créé des logos, icônes, et divers supports publicitaires. Mon parcours inclut des missions de mise en page, de traitement d'images, et de gestion de production. Mes compétences incluent l'utilisation d'outils comme InDesign, Illustrator, et Photoshop, ainsi que la communication efficace avec les développeurs pour améliorer l'expérience utilisateur. Mon approche créative et polyvalente m'a permis de m'adapter à différents projets et environnements professionnels.
               </Typography>
               <Grid container spacing={2} justifyContent="center">
-                
               </Grid>
               <Typography variant='subtitle1' color="primary" gutterBottom>Technologie</Typography>
               <SkillsGrid initialCategory='Design' />
             </Grid>
             {!isXs && (
               <Grid item xs={12} md={6}>
-                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%'}}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                   <Image
                     src="/images/designCover.webp"
                     alt="Description de l'image"
-                    layout="fill"
-                    objectFit="contain"
+                    fill
                   />
                 </Box>
               </Grid>

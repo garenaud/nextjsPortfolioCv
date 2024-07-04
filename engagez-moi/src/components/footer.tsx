@@ -95,7 +95,7 @@ const Footer = () => {
         </Box>
         <Box mt={4} textAlign="center">
           <Typography variant="body1">
-            Gaëtan Renaud, passionné par le design et le développement web.
+            Gaëtan Renaud, rue Neuve 9, 2314 La Sagne
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {'© '}
