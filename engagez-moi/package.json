@@ -5,10 +5,9 @@
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
-    "export": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && next export && gh-pages -d out"
+    "deploy": "dotenv -e .env.local -- npx gh-pages -d out -r https://$GITHUB_TOKEN@github.com/garenaud/nextjsPortfolioCv.git -f"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
@@ -34,6 +33,7 @@
     "@types/react-slick": "^0.23.13",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
     "@typescript-eslint/parser": "^7.14.1",
+    "dotenv-cli": "^7.4.2",
     "eslint": "^8",
     "eslint-config-next": "^12.3.4",
     "gh-pages": "^3.2.3",
