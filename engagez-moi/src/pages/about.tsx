@@ -18,6 +18,7 @@ const bgColor2: string = '#f9f4ea';
 export default function About() {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
+  const basePath = process.env.basePath || '';
 
   return (
     <Layout>
@@ -32,13 +33,12 @@ export default function About() {
           <Grid container spacing={2}>
             {isXs && (
               <Grid item xs={12}>
-                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%', marginTop: -15}}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%', marginTop: -15 }}>
                   <Image
-                    src="/images/grenaud-Rond.png"
+                    src={`${basePath}/images/grenaud-Rond.png`}
                     alt="Description de l'image"
-                    layout="fill"
+                    fill
                     style={{ objectFit: 'contain' }}
-
                   />
                 </Box>
                 <SocialLinks />
@@ -50,13 +50,12 @@ export default function About() {
             </Grid>
             {!isXs && (
               <Grid item xs={12} md={6}>
-                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%', marginTop: -20}}>
+                <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%', marginTop: -20 }}>
                   <Image
-                    src="/images/grenaud-Rond.png"
+                    src={`${basePath}/images/grenaud-Rond.png`}
                     alt="Description de l'image"
-                    layout="fill"
+                    fill
                     style={{ objectFit: 'contain' }}
-
                   />
                 </Box>
                 <SocialLinks />
@@ -99,7 +98,7 @@ export default function About() {
         <Container maxWidth="xl">
           <Grid container spacing={2}>
             <Grid item xs={12} md={12}>
-            <Typography variant='h2' color="primary" gutterBottom>Mes compétences</Typography>
+              <Typography variant='h2' color="primary" gutterBottom>Mes compétences</Typography>
               <Skills />
             </Grid>
             <Grid item xs={12} md={12}>

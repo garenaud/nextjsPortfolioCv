@@ -2,12 +2,15 @@ const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   swcMinify: true,
-  assetPrefix: isProd ? '/nextjsPortfolioCv/' : '',
-  basePath: isProd ? '/nextjsPortfolioCv' : '',
+  assetPrefix: isProd ? '/nextjsPortfolioCv/engagez-moi/' : '',
+  basePath: isProd ? '/nextjsPortfolioCv/engagez-moi' : '',
   trailingSlash: true,
   output: 'export',
   images: {
     unoptimized: true,
+  },
+  env: {
+    basePath: isProd ? '/nextjsPortfolioCv/engagez-moi' : '',
   },
   webpack: (config, { dev }) => {
     if (dev) {
