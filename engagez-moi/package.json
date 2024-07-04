@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "dotenv -e .env.local -- npx gh-pages -d out -r https://$GITHUB_TOKEN@github.com/garenaud/nextjsPortfolioCv.git -f"
+    "deploy": "dotenv -e .env.local -- npx gh-pages -d out -r git@github.com:garenaud/nextjsPortfolioCv.git -f"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
