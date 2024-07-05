@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "dotenv -e .env.local -- npx gh-pages -d out -r git@github.com:garenaud/nextjsPortfolioCv.git -f"
+    "deploy": "dotenv -e .env.local -- npx gh-pages -d out -r git@github.com:garenaud/nextjsPortfolioCv.git -f -t true"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/server": "^11.11.0",
@@ -22,6 +24,8 @@
     "next-google-fonts": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "watchpack": "^2.4.1",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"

@@ -18,7 +18,6 @@ const bgColor2: string = '#f9f4ea';
 export default function About() {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
-  const basePath = process.env.basePath || '';
 
   return (
     <Layout>
@@ -35,7 +34,8 @@ export default function About() {
               <Grid item xs={12}>
                 <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%', marginTop: -15 }}>
                   <Image
-                    src={`${basePath}/images/grenaud-Rond.png`}
+                    unoptimized
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/grenaud-Rond.png`}
                     alt="Description de l'image"
                     fill
                     style={{ objectFit: 'contain' }}
@@ -52,7 +52,8 @@ export default function About() {
               <Grid item xs={12} md={6}>
                 <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%', marginTop: -20 }}>
                   <Image
-                    src={`${basePath}/images/grenaud-Rond.png`}
+                    unoptimized
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/grenaud-Rond.png`}
                     alt="Description de l'image"
                     fill
                     style={{ objectFit: 'contain' }}

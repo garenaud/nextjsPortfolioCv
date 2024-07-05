@@ -16,7 +16,6 @@ interface SkillsGridProps {
 const SkillsGrid: React.FC<SkillsGridProps> = ({ initialCategory }) => {
   const [selectedCategory] = useState<string>(initialCategory);
   const [skills, setSkills] = useState<Skill[]>([]);
-  const basePath = process.env.basePath || '';
 
   useEffect(() => {
     setSkills(skillsData);
@@ -30,7 +29,7 @@ const SkillsGrid: React.FC<SkillsGridProps> = ({ initialCategory }) => {
         {filteredSkills.map((skill, index) => (
           <Grid item key={index}>
             <Chip
-              avatar={<Avatar src={`${basePath}${skill.logo}`} sx={{ width: 24, height: 24 }} />}
+              avatar={<Avatar src={`${skill.logo}`} sx={{ width: 24, height: 24 }} />}
               label={`${skill.name}`}
               variant="outlined"
               sx={{ backgroundColor: 'white' }}

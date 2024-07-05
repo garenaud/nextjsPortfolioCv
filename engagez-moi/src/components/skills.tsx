@@ -12,7 +12,6 @@ interface Skill {
 
 export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const basePath = process.env.basePath || '';
 
   const handleCategoryChange = (event: SelectChangeEvent<string>) => {
     setSelectedCategory(event.target.value as string);
@@ -49,7 +48,7 @@ export default function Skills() {
           <Card key={index} sx={{ height: 100 }}>
             <CardContent>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <Avatar src={`${basePath}${skill.logo}`} alt={skill.name} sx={{ mr: 2 }} />
+                <Avatar src={`${skill.logo}`} alt={skill.name} sx={{ mr: 2 }} />
                 <Typography variant="h6" component="div">
                   {skill.name}
                 </Typography>

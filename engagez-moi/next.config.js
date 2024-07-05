@@ -2,8 +2,8 @@ const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   swcMinify: true,
-  assetPrefix: isProd ? process.env.NEXT_PUBLIC_ASSET_PREFIX : '',
-  basePath: isProd ? process.env.NEXT_PUBLIC_BASE_PATH : '',
+  assetPrefix: isProd ? '' : '',
+  basePath: isProd ? '' : '',
   trailingSlash: true,
   output: 'export',
   images: {

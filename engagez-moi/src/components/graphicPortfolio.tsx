@@ -14,9 +14,9 @@ import {
 } from '@mui/material';
 import { SelectChangeEvent } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 
 type GraphicWork = {
   title: string;

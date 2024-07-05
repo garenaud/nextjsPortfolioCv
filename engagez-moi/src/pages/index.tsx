@@ -21,7 +21,6 @@ const bgColor2: string = '#f9f4ea';
 const Home: React.FC = () => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
-  const basePath = process.env.basePath || '';
 
   return (
     <Layout>
@@ -37,10 +36,11 @@ const Home: React.FC = () => {
               <Grid item xs={12}>
                 <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                   <Image
-                    src={`${basePath}/images/grenaud-Rond.png`}
+                    unoptimized
+                    src={`/images/grenaud-Rond.png`}
                     alt="Description de l'image"
                     fill
-                  />
+                    />
                 </Box>
                 <SocialLinks />
               </Grid>
@@ -83,7 +83,8 @@ const Home: React.FC = () => {
               <Grid item xs={12} md={6}>
                 <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                   <Image
-                    src={`${basePath}/images/grenaud-Rond.png`}
+                    unoptimized
+                    src={`/images/grenaud-Rond.png`}
                     alt="Description de l'image"
                     fill
                   />
@@ -108,7 +109,8 @@ const Home: React.FC = () => {
                 <Grid item xs={12}>
                   <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                     <Image
-                      src={`${basePath}/images/RecWebDev.webp`}
+                      unoptimized
+                      src={`/images/RecWebDev.webp`}
                       alt="Description de l'image"
                       fill
                     />
@@ -131,7 +133,8 @@ const Home: React.FC = () => {
               <Grid item xs={12} md={6}>
                 <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                   <Image
-                    src={`${basePath}/images/RecWebDev.webp`}
+                    unoptimized
+                    src={`/images/RecWebDev.webp`}
                     alt="Description de l'image"
                     fill
                   />
@@ -157,7 +160,8 @@ const Home: React.FC = () => {
               <Grid item xs={12}>
                 <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                   <Image
-                    src={`${basePath}/images/designCover.webp`}
+                    unoptimized
+                    src={`/images/designCover.webp`}
                     alt="Description de l'image"
                     fill
                   />
@@ -180,7 +184,8 @@ const Home: React.FC = () => {
               <Grid item xs={12} md={6}>
                 <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%' }}>
                   <Image
-                    src={`${basePath}/images/designCover.webp`}
+                    unoptimized
+                    src={`/images/designCover.webp`}
                     alt="Description de l'image"
                     fill
                   />

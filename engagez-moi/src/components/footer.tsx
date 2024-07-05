@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Container, Typography, Link, TextField, Button, Grid } from '@mui/material';
 import SocialLinks from './social';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 const bgColor2: string = '#f9f4ea';
 
