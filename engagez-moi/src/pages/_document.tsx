@@ -54,7 +54,16 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;600;700&display=swap"
             rel="stylesheet"
           />
-          {/* Ajoutez d'autres balises Head ici */}
+          <style>
+            {`
+              html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                height: 100%;
+                width: 100%;
+              }
+            `}
+          </style>
         </Head>
         <body>
           <Main />
