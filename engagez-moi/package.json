@@ -1,6 +1,7 @@
 {
   "name": "engagez-moi",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
@@ -11,7 +12,7 @@
     "deploy": "dotenv -e .env.local -- npx gh-pages -d out -r git@github.com:garenaud/nextjsPortfolioCv.git -f -t true"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.3.3",
+    "@emailjs/browser": "^4.4.1",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/server": "^11.11.0",

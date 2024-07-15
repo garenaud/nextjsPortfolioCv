@@ -35,7 +35,7 @@ export default function About() {
                 <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%', marginTop: -15 }}>
                   <Image
                     unoptimized
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/grenaud-Rond.png`}
+                    src={`/images/grenaud-Rond.png`}
                     alt="Description de l'image"
                     fill
                     style={{ objectFit: 'contain' }}
@@ -53,7 +53,7 @@ export default function About() {
                 <Box sx={{ position: 'relative', width: '100%', height: 0, paddingBottom: '100%', marginTop: -20 }}>
                   <Image
                     unoptimized
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/grenaud-Rond.png`}
+                    src={`/images/grenaud-Rond.png`}
                     alt="Description de l'image"
                     fill
                     style={{ objectFit: 'contain' }}
