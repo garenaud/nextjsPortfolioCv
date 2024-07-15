@@ -38,7 +38,7 @@ const Projects = () => {
     slidesToShow: Math.min(4, projects.length),
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '10px',
+    centerPadding: '20px',
     initialSlide: Math.floor(projects.length / 2),
     nextArrow: <div>Next</div>,
     prevArrow: <div>Previous</div>,
@@ -48,7 +48,7 @@ const Projects = () => {
         settings: {
           slidesToShow: Math.min(2, projects.length),
           slidesToScroll: 1,
-          centerPadding: '40px',
+          centerPadding: '20px',
         },
       },
       {
