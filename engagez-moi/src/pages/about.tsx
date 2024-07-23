@@ -54,7 +54,7 @@ export default function About() {
                   <Image
                     unoptimized
                     src={`/images/grenaud-Rond.png`}
-                    alt="Description de l'image"
+                    alt="grenaud"
                     fill
                     style={{ objectFit: 'contain' }}
                   />
