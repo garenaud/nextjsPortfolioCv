@@ -5,7 +5,7 @@ export default {
   assetPrefix: isProd ? '' : '',
   basePath: isProd ? '' : '',
   trailingSlash: true,
-  //output: 'export',
+  output: 'export',
   images: {
     unoptimized: true,
   },
