@@ -1,11 +1,11 @@
 const isProd = process.env.NODE_ENV === 'production';
 
-module.exports = {
+export default {
   swcMinify: true,
   assetPrefix: isProd ? '' : '',
   basePath: isProd ? '' : '',
   trailingSlash: true,
-  output: 'export',
+  //output: 'export',
   images: {
     unoptimized: true,
   },
