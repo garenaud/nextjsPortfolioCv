@@ -18,7 +18,8 @@ Vous pouvez installer et exécuter ce projet de deux manières :
    cd nextjsPortfolioCv
    ```
 2. Construisez et lancez le conteneur Docker :
-   ```docker build -t nextjs-portfolio .
+   ```bash
+   docker build -t nextjs-portfolio .
    docker run -p 3000:3000 nextjs-portfolio
    ```
 3. Accédez au site à l'adresse http://localhost:3000.
@@ -31,14 +32,17 @@ Vous pouvez installer et exécuter ce projet de deux manières :
    cd nextjsPortfolioCv
    ```
 2. Installez les dépendances :
-   ```npm install
+   ```bash
+   npm install
    ```
 3. Pour lancer le site en mode développement :
-   ```npm run dev
+   ```bash
+   npm run dev
    ```
    Accédez au site à l'adresse http://localhost:3000.
 4. Pour construire et déployer le site :
-   ```npm run build
+   ```bash
+   npm run build
    npm run deploy
    ```
 
