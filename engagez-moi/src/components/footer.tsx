@@ -93,8 +93,11 @@ const Footer = () => {
           <SocialLinks />
         </Box>
         <Box mt={4} textAlign="center">
-          <Typography variant="body1" color="text.secondary">
-            Ce site a été créé avec React, next.js et Material-UI. N'hésitez pas à aller voir le code source sur {'https://github.com/garenaud/nextjsPortfolioCv'}
+        <Typography variant="body1" color="text.secondary">
+            Ce site a été créé avec React, Next.js et Material-UI. N'hésitez pas à aller voir le code source sur {' '}
+            <Link href="https://github.com/garenaud/nextjsPortfolioCv" target="_blank" rel="noopener">
+              mon repo GitHub
+            </Link>.
           </Typography>
           <Typography variant="body1">
             Gaëtan Renaud, rue Neuve 9, 2314 La Sagne

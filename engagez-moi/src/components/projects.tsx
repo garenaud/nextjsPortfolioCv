@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Card, CardContent, CardHeader, Grid, Chip, Avatar, Button, Container, CardActions } from '@mui/material';
+import { Box, Typography, Card, CardContent, Grid, Chip, Avatar, Button, Container, CardActions, CardMedia, Dialog, DialogContent } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import 'slick-carousel/slick/slick.css';
@@ -20,6 +20,9 @@ interface Project {
 
 const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
+  const [maxHeight, setMaxHeight] = useState<number | null>(null);
+  const [open, setOpen] = useState<boolean>(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -30,6 +33,26 @@ const Projects = () => {
 
     fetchProjects();
   }, []);
+
+  useEffect(() => {
+    if (projects.length) {
+      // Calculer la hauteur maximale des cartes
+      const heights = Array.from(document.getElementsByClassName('project-card')).map(
+        card => card.getBoundingClientRect().height
+      );
+      setMaxHeight(Math.max(...heights));
+    }
+  }, [projects]);
+
+  const handleClickOpen = (image: string) => {
+    setSelectedImage(image);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setSelectedImage(null);
+  };
 
   const settings = {
     dots: true,
@@ -85,7 +108,7 @@ const Projects = () => {
             key={index}
             sx={{
               paddingX: 1,
-              margin: '10px', // Ajout d'une marge ici
+              margin: '10px',
               width: '300px',
               height: '100%',
               display: 'flex',
@@ -94,18 +117,43 @@ const Projects = () => {
             }}
           >
             <Card
+              className="project-card"
               sx={{
                 minWidth: 300,
                 maxWidth: 345,
-                height: 450,
+                height: maxHeight ? `${maxHeight}px` : 'auto',
                 borderRadius: 4,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                margin: '10px', // Ajout d'une marge ici
+                margin: '10px',
               }}
             >
-              <CardHeader title={project.title} subheader={project.category} />
+              <Box sx={{ position: 'relative' }}>
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={project.image}
+                  alt={project.title}
+                  onClick={() => handleClickOpen(project.image)}
+                  sx={{ cursor: 'pointer' }}
+                />
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: 10,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    textAlign: 'center',
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    padding: '4px 8px',
+                    borderRadius: '4px',
+                  }}
+                >
+                  <Typography variant="h6">{project.title}</Typography>
+                  <Typography variant="body2" color="text.secondary">{project.category}</Typography>
+                </Box>
+              </Box>
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography variant="body2" color="text.primary" paragraph>
                   {project.description}
@@ -131,39 +179,51 @@ const Projects = () => {
                     </Grid>
                   ))}
                 </Grid>
+                <CardActions sx={{ marginTop: 'auto' }}>
+                  <Grid container spacing={1}>
+                    <Grid item>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        startIcon={<GitHubIcon />}
+                        href={project.repoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Repo GitHub
+                      </Button>
+                    </Grid>
+                    <Grid item>
+                      <Button
+                        variant="outlined"
+                        color="secondary"
+                        startIcon={<PictureAsPdfIcon />}
+                        href={project.pdfLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Voir le PDF
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </CardActions>
               </Box>
-              <CardActions>
-                <Grid container spacing={1}>
-                  <Grid item>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      startIcon={<GitHubIcon />}
-                      href={project.repoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Repo GitHub
-                    </Button>
-                  </Grid>
-                  <Grid item>
-                    <Button
-                      variant="outlined"
-                      color="secondary"
-                      startIcon={<PictureAsPdfIcon />}
-                      href={project.pdfLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Voir le PDF
-                    </Button>
-                  </Grid>
-                </Grid>
-              </CardActions>
             </Card>
           </Box>
         ))}
       </Slider>
+
+      <Dialog open={open} onClose={handleClose} maxWidth="md">
+        <DialogContent>
+          {selectedImage && (
+            <img
+              src={selectedImage}
+              alt="Selected Project"
+              style={{ width: '100%', height: 'auto' }}
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </Container>
   );
 };

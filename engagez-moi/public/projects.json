@@ -15,7 +15,7 @@
       "technologies": ["Docker", "NGINX", "WordPress", "MariaDB"],
       "repoLink": "https://github.com/garenaud/Inception",
       "pdfLink": "https://github.com/garenaud/Inception/blob/main/Inception.subject.pdf",
-      "image": "/images/projects/inception.png"
+      "image": "/images/projects/inception.webp"
     },
     {
       "title": "IRC - SERVEUR IRC EN C++98",
