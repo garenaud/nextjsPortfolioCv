@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '@/components/layout';
 import ExperienceTimeline from '@/components/timeline';
@@ -21,6 +22,9 @@ export default function About() {
 
   return (
     <Layout>
+      <Head>
+        <title>CV online Gaëtan Renaud</title>
+      </Head>
       <Box
         sx={{
           width: '100%',

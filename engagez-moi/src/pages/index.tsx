@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Layout from '@/components/layout';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
@@ -24,6 +25,9 @@ const Home: React.FC = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>Accueil | Portfolio de Gaëtan Renaud</title>
+      </Head>
       <Box
         sx={{
           width: '100%',
