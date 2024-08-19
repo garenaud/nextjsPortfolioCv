@@ -4,6 +4,7 @@ import Layout from '@/components/layout';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -21,12 +22,13 @@ const bgColor2: string = '#f9f4ea';
 
 const Home: React.FC = () => {
   const theme = useTheme();
+  const { t } = useTranslation('common');
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Layout>
       <Head>
-        <title>Accueil | Portfolio de Gaëtan Renaud</title>
+        <title>{t('title')}</title>
       </Head>
       <Box
         sx={{
@@ -50,22 +52,17 @@ const Home: React.FC = () => {
               </Grid>
             )}
             <Grid item xs={12} md={6} container direction="column" justifyContent="center">
-              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>Gaëtan Renaud</Typography>
-              <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Junior</Typography>
-              <Typography variant='h1' color="primary" gutterBottom ml={10}>Developper</Typography>
+              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>{t('name')}</Typography>
+              <Typography variant='h1' color="secondary" gutterBottom mb={-3}>{t('jobTitle1')}</Typography>
+              <Typography variant='h1' color="primary" gutterBottom ml={10}>{t('jobTitle2')}</Typography>
               <Typography variant='body1' gutterBottom mb={5}>
-                Je m&apos;appelle Gaëtan Renaud et je suis passionné par le design et le développement web.
-                Ce CV interactif est conçu pour vous offrir un aperçu de mon parcours professionnel,
-                de mes compétences et de mes expériences dans le domaine du design graphique
-                et du développement informatique. Découvrez mes projets, mes compétences et les diverses
-                étapes de ma carrière. Explorez mon univers et n&apos;hésitez pas à me contacter pour toute collaboration
-                ou opportunité.
+                {t('intro')}
               </Typography>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <Link href="/about">
                     <Button variant="contained" color="primary">
-                      Voir mon cv en ligne
+                      {t('seeCvOnline')}
                     </Button>
                   </Link>
                 </Grid>
@@ -78,7 +75,7 @@ const Home: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    télécharger le CV
+                    {t('downloadCv')}
                   </Button>
                 </Grid>
               </Grid>
@@ -121,14 +118,14 @@ const Home: React.FC = () => {
                   </Box>
                 </Grid>
               )}
-              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>A propos de moi</Typography>
-              <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Reconversion</Typography>
-              <Typography variant='h1' color="primary" gutterBottom ml={5}>en développeur</Typography>
+              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>{t('aboutMe')}</Typography>
+              <Typography variant='h1' color="secondary" gutterBottom mb={-3}>{t('careerChange1')}</Typography>
+              <Typography variant='h1' color="primary" gutterBottom ml={5}>{t('careerChange2')}</Typography>
               <Typography variant='body1'>
-                Fort de plus de 15 ans d'expérience dans le domaine du graphisme, j'ai décidé de me réorienter vers le développement web après avoir été sélectionné à l'école 42. Bien que je maîtrisais déjà le HTML et le CSS, mes débuts avec le JavaScript étaient plus laborieux. Cependant, grâce à un parcours intensif d'un an en C et C++, j'ai retrouvé du plaisir à travailler sur des projets web, notamment en JavaScript vanilla.
+                {t('reconvTxt')}
               </Typography>
               <Typography variant='body1'>
-                Mon dernier projet m'a permis de créer un mini-framework frontend, me donnant ainsi une base solide pour explorer les frameworks modernes. Désormais, je m'épanouis pleinement dans le développement web, tant sur le frontend que sur le backend. Je suis curieux et j'aspire à rejoindre une équipe où je pourrais continuer à apprendre et à prouver mes compétences.
+                {t('reconvTxt2')}
               </Typography>
               <Typography variant='subtitle1' color="primary" gutterBottom>Technologie</Typography>
               <SkillsGrid initialCategory='Development' />
@@ -173,15 +170,15 @@ const Home: React.FC = () => {
               </Grid>
             )}
             <Grid item xs={12} md={6} container direction="column" justifyContent="center">
-              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>UI Designer</Typography>
-              <Typography variant='h1' color="secondary" gutterBottom mb={-3}>Expérience</Typography>
-              <Typography variant='h1' color="primary" gutterBottom ml={10}>de graphiste</Typography>
+              <Typography variant='subtitle1' color="primary" gutterBottom mb={-2}>{t('UiDesign')}</Typography>
+              <Typography variant='h1' color="secondary" gutterBottom mb={-3}>{t('experienceGra')}</Typography>
+              <Typography variant='h1' color="primary" gutterBottom ml={10}>{t('experienceGra2')}</Typography>
               <Typography variant='body1' gutterBottom mb={5}>
-                Avec plus de 15 ans d'expérience dans le graphisme, j'ai travaillé dans divers secteurs en tant que polygraphe et UI designer. J'ai conçu des interfaces utilisateur pour des applications, créé des logos, icônes, et divers supports publicitaires. Mon parcours inclut des missions de mise en page, de traitement d'images, et de gestion de production. Mes compétences incluent l'utilisation d'outils comme InDesign, Illustrator, et Photoshop, ainsi que la communication efficace avec les développeurs pour améliorer l'expérience utilisateur. Mon approche créative et polyvalente m'a permis de m'adapter à différents projets et environnements professionnels.
+                {t('graphicDesign')}
               </Typography>
               <Grid container spacing={2} justifyContent="center">
               </Grid>
-              <Typography variant='subtitle1' color="primary" gutterBottom>Technologie</Typography>
+              <Typography variant='subtitle1' color="primary" gutterBottom>{t('technology')}</Typography>
               <SkillsGrid initialCategory='Design' />
             </Grid>
             {!isXs && (

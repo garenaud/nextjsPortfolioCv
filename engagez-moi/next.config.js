@@ -1,3 +1,4 @@
+import { i18n } from './next-i18next.config.mjs';
 const isProd = process.env.NODE_ENV === 'production';
 
 export default {
@@ -5,10 +6,10 @@ export default {
   assetPrefix: isProd ? '' : '',
   basePath: isProd ? '' : '',
   trailingSlash: true,
-  output: 'export',
   images: {
     unoptimized: true,
   },
+  i18n, // Ensure i18n is included
   webpack: (config, { dev }) => {
     if (dev) {
       config.watchOptions = {

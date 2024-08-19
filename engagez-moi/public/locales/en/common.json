@@ -1,0 +1,19 @@
+{
+    "title": "Home | Gaëtan Renaud's Portfolio",
+    "name": "Gaëtan Renaud",
+    "jobTitle1": "Developer",
+    "jobTitle2": "Junior",
+    "intro": "My name is Gaëtan Renaud, and I am passionate about design and web development. This interactive resume is designed to give you an overview of my professional journey, skills, and experiences in graphic design and software development. Discover my projects, skills, and the various stages of my career. Explore my world and feel free to contact me for any collaboration or opportunity.",
+    "seeCvOnline": "View my online resume",
+    "downloadCv": "Download the resume",
+    "aboutMe": "About me",
+    "reconvTxt": "With over 15 years of experience in graphic design, I decided to pivot towards web development after being selected for École 42. Although I was already proficient in HTML and CSS, my initial experience with JavaScript was more challenging. However, through an intensive one-year program in C and C++, I rediscovered the joy of working on web projects, particularly with vanilla JavaScript.",
+    "reconvTxt2": "My latest project allowed me to create a mini frontend framework, giving me a solid foundation to explore modern frameworks. Now, I fully thrive in web development, both on the frontend and backend. I am curious and aspire to join a team where I can continue learning and prove my skills.",
+    "careerChange1": "Career change",
+    "careerChange2": "to developer",
+    "graphicDesign": "With over 15 years of experience in graphic design, I have worked in various sectors as a polygraph and UI designer. I have designed user interfaces for applications, created logos, icons, and various advertising materials. My journey includes tasks such as layout design, image processing, and production management. My skills include using tools like InDesign, Illustrator, and Photoshop, as well as effectively communicating with developers to enhance user experience. My creative and versatile approach has enabled me to adapt to different projects and professional environments.",
+    "experienceGra": "Experience",
+    "experienceGra2": "as a graphic designer",
+    "technology": "Technology",
+    "UiDesign": "UI Designer"
+}
