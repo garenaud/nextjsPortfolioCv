@@ -1,5 +1,12 @@
 [
     {
+      "title": "HACKATHON – DASHBOARD d’alarmes industrielles (Web/IoT)",
+      "description": "Développement en équipe, dans un délai contraint de 48h, d’un prototype complet combinant un device IoT sur Raspberry Pi et un dashboard web pour la surveillance d’alarmes industrielles. Le Raspberry collectait et transmettait les données en temps réel via WebSockets, tandis que le backend Django gérait les API et la logique métier. L’interface utilisateur, développée en HTML/CSS/JavaScript, permettait de visualiser instantanément l’état des machines et leurs alarmes. L’ensemble a été packagé avec Docker afin d’assurer un déploiement rapide et reproductible dans le contexte intensif du hackathon.",
+      "category": "Web",
+      "technologies": ["C", "Docker", "JavaScript", "Django"],
+      "image": "/images/projects/Hackathon.jpeg"
+    },
+    {
       "title": "TRANSCENDENCE - WEBSITE AVEC UN PONG MULTIJOUEUR",
       "description": "Développement d’un site de jeu Pong multijoueur, avec un frontend en JavaScript natif, implémentant une structure inspirée de React sans utiliser de framework. Backend géré par Django, permettant interactions et jeu en temps réel entre utilisateurs.",
       "category": "Web",
