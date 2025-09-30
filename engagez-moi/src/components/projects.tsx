@@ -5,8 +5,8 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import type { Settings } from 'react-slick';
 
-// ---- Types ----
 export type Technology = 'JavaScript' | 'Docker' | 'C++' | 'C' | 'Django' | 'NGINX' | 'WordPress' | 'MariaDB' | 'Unix';
 
 export interface Project {
@@ -14,11 +14,12 @@ export interface Project {
   description: string;
   category: string;
   technologies: Technology[];
-  // Lien repo et PDF optionnels
   repoLink?: string;
   pdfLink?: string;
   image: string;
 }
+
+const nonEmpty = (v?: string): v is string => typeof v === 'string' && v.trim().length > 0;
 
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -26,7 +27,6 @@ const Projects: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // Chargement du JSON avec garde-fous
   useEffect(() => {
     const fetchProjects = async () => {
       try {
@@ -42,7 +42,6 @@ const Projects: React.FC = () => {
     fetchProjects();
   }, []);
 
-  // Calcul de la hauteur max après rendu des cartes
   useEffect(() => {
     if (projects.length) {
       const nodes = Array.from(document.getElementsByClassName('project-card')) as HTMLElement[];
@@ -63,9 +62,8 @@ const Projects: React.FC = () => {
     setSelectedImage(null);
   };
 
-  // Slider settings robustes même quand il n'y a pas de projets
   const slidesToShowBase = projects.length === 0 ? 1 : Math.min(4, projects.length);
-  const settings = {
+  const settings: Settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -94,7 +92,7 @@ const Projects: React.FC = () => {
         },
       },
     ],
-  } as const;
+  } ;
 
   const technologyIcons: Record<Technology, string> = {
     JavaScript: '/images/js.png',
@@ -116,9 +114,6 @@ const Projects: React.FC = () => {
 
       <Slider {...settings}>
         {projects.map((project, index) => {
-          const hasRepo = Boolean(project.repoLink && project.repoLink.trim());
-          const hasPdf = Boolean(project.pdfLink && project.pdfLink.trim());
-
           return (
             <Box
               key={index}
@@ -198,11 +193,11 @@ const Projects: React.FC = () => {
                   )}
                 </CardContent>
 
-                {(hasRepo || hasPdf) && (
+                {(nonEmpty(project.repoLink) || nonEmpty(project.pdfLink)) && (
                   <Box sx={{ paddingX: 2, paddingBottom: 2 }}>
                     <CardActions sx={{ marginTop: 'auto' }}>
                       <Grid container spacing={1}>
-                        {hasRepo && (
+                        {nonEmpty(project.repoLink) && (
                           <Grid item>
                             <Button
                               variant="contained"
@@ -217,7 +212,7 @@ const Projects: React.FC = () => {
                           </Grid>
                         )}
 
-                        {hasPdf && (
+                        {nonEmpty(project.pdfLink) && (
                           <Grid item>
                             <Button
                               variant="outlined"
