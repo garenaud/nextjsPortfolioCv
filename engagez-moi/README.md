@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## SSH Terminal Portfolio
+
+You can run a terminal-friendly portfolio UI that reads the same JSON files from `public/`:
+
+```bash
+npm run ssh-portfolio
+```
+
+This is useful for SSH-only environments and any plain console session.
+
+Example remote usage:
+
+```bash
+ssh user@host -t 'cd /path/to/engagez-moi && npm install && npm run ssh-portfolio'
+```
