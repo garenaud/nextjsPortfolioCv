@@ -95,5 +95,19 @@
       "Communication avec les développeurs",
       "Recherche afin d'améliorer le UX de l'application"
     ]
+  },
+  {
+    "date": "Novembre 2025 - Mars 2026",
+    "type": "work",
+    "title": "Web Developpeur",
+    "company": "Uditis",
+    "location": "Peseux, NE",
+    "tasks": [
+      "Conception et réalisation de maquettes en collaboration avec le Business Analyst à l'aide de l'outil Figma",
+      "Participation à la conception et réalisation d'un Design System en TypeScript et SCSS",
+      "Réalisation d'une documentation pour les composants dans Storybook",
+      "Intégration des tests unitaires dans le Design System",
+      "Optimisation de l'UX/UI de plateformes applicatives",
+      "Résolution de problèmes de génération de PDF en binôme avec un développeur backend"]
   }
 ]
